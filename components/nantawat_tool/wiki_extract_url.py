@@ -1,16 +1,17 @@
-"""Score a website based on a search query using a subprocess."""
+"""Wikipedia Extract Official Website."""
 
 import shlex
 import subprocess
 from pathlib import Path
 
 from langflow.custom.custom_component.component import Component
-from langflow.inputs.inputs import MessageTextInput, StrInput
+from langflow.inputs.inputs import MessageTextInput
 from langflow.io import (
     Output,
 )
-from langflow.schema.data import Data
 from loguru import logger
+from langflow.schema.data import Data
+from lfx.base.tools.component_tool import _get_input_type
 
 
 def find_venv_path(start_path: Path, venv_name=".venv"):
@@ -29,51 +30,37 @@ def find_venv_path_from_file(file_path: str | Path, venv_name=".venv"):
     return find_venv_path(file_path.parent, venv_name)
 
 
-class OfficialWebsiteScore(Component):
+class ExtractWebWiki(Component):
     """Component for fetching the official website score based on a search query."""
 
-    display_name = "Official Website Score"
-    description = (
-        "Get Website that relevance event or something and Score "
-        "that website how much you can trust the website are the official Website of the event."
-    )
+    display_name = "Wiki Website Extractor"
+    description = "Get Candidate Official Website from Wikipedia."
     icon = "Globe"
-    name = "WebScore"
+    name = "WebWikiExtract"
 
     inputs = [
         MessageTextInput(
             name="module_directory",
             display_name="Module Directory",
             required=True,
-            value="/home/nantawat/Desktop/my_project/tools/web_score/main.py",
+            value="/home/nantawat/Desktop/my_project/tools/official_website_extract/main.py",
             info="The directory where the module is located. "
             "This is used to set the working directory for the subprocess.",
         ),
-        StrInput(
+        MessageTextInput(
             name="name_search",
             display_name="Search Name",
-            info="The name of something that want to search for."
+            info="String The name of something that want to search for."
             " This will be used to find the official website and score it.",
             value="Example Event",
-            input_types=["str"],
-            tool_mode=True,
-        ),
-        MessageTextInput(
-            name="list_url_candidates",
-            display_name="URL Candidates",
-            info="URL candidates to score.",
-            value=["https://example.com", "https://example.org"],
-            input_types=["list"],
-            is_list=True,
             tool_mode=True,
         ),
     ]
-
     outputs = [
-        Output(display_name="Output", name="output", method="fetch_output"),
+        Output(display_name="Output", name="output", method="fetch_url_candidate"),
     ]
 
-    def fetch_output(self) -> Data:
+    def fetch_url_candidate(self) -> Data:
         """Run the command and return the output."""
         venv_path = find_venv_path_from_file(self.module_directory)
         if not venv_path:
@@ -87,9 +74,8 @@ class OfficialWebsiteScore(Component):
 
         safe_name_search = shlex.quote(self.name_search)
 
-        arguments: list[str] = ["--query", safe_name_search, "--list", *self.list_url_candidates]
-        logger.debug(f"Running command with arguments: {arguments}")
-        self.log(f"Running command with arguments: {arguments}")
+        arguments: list[str] = ["--query", safe_name_search]
+
         # Set the working directory
         module_directory = self.module_directory.strip()
         if not module_directory:

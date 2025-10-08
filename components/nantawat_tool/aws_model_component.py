@@ -1,163 +1,133 @@
-"""LiteLLM model component for Langflow."""
+"""Amazon Bedrock LLM component for LangFlow."""
 
-from langchain_community.chat_models.litellm import ChatLiteLLM, ChatLiteLLMException
-from langflow.base.constants import STREAM_INFO_TEXT
+from langflow.base.models.aws_constants import AWS_REGIONS, AWS_MODEL_IDs
 from langflow.base.models.model import LCModelComponent
 from langflow.field_typing import LanguageModel
-from langflow.io import (
-    BoolInput,
-    DictInput,
-    DropdownInput,
-    FloatInput,
-    IntInput,
-    MessageInput,
-    SecretStrInput,
-    StrInput,
-)
+from langflow.inputs.inputs import MessageTextInput, SecretStrInput
+from langflow.io import DictInput, DropdownInput
 
 
-class ChatLiteLLMModelComponent(LCModelComponent):
-    """LiteLLM model component for Langflow."""
+class AmazonBedrockComponent2(LCModelComponent):
+    """Component for generating text using Amazon Bedrock LLMs."""
 
-    display_name = "LiteLLM"
-    description = "`LiteLLM` collection of large language models."
-    documentation = "https://python.langchain.com/docs/integrations/chat/litellm"
-    icon = "Globe"
+    display_name: str = "Amazon Bedrock 2"
+    description: str = "Generate text using Amazon Bedrock LLMs."
+    icon = "Amazon"
+    name = "AmazonBedrockModel2"
 
     inputs = [
-        MessageInput(name="input_value", display_name="Input"),
-        StrInput(
-            name="model",
-            display_name="Model name",
-            advanced=False,
-            required=True,
-            info="The name of the model to use. For example, `gpt-3.5-turbo`.",
+        *LCModelComponent._base_inputs,  # noqa: SLF001
+        DropdownInput(
+            name="model_id",
+            display_name="Model ID",
+            options=AWS_MODEL_IDs,
+            value="us.meta.llama3-3-70b-instruct-v1:0",
+            info="List of available model IDs to choose from.",
         ),
         SecretStrInput(
-            name="api_key",
-            display_name="API Key",
+            name="aws_access_key_id",
+            display_name="AWS Access Key ID",
+            info="The access key for your AWS account."
+            "Usually set in Python code as the environment variable 'AWS_ACCESS_KEY_ID'.",
+            value="AWS_ACCESS_KEY_ID",
+            required=True,
+        ),
+        SecretStrInput(
+            name="aws_secret_access_key",
+            display_name="AWS Secret Access Key",
+            info="The secret key for your AWS account. "
+            "Usually set in Python code as the environment variable 'AWS_SECRET_ACCESS_KEY'.",
+            value="AWS_SECRET_ACCESS_KEY",
+            required=True,
+        ),
+        SecretStrInput(
+            name="aws_session_token",
+            display_name="AWS Session Token",
             advanced=False,
-            required=False,
+            info="The session key for your AWS account. "
+            "Only needed for temporary credentials. "
+            "Usually set in Python code as the environment variable 'AWS_SESSION_TOKEN'.",
+            load_from_db=False,
+        ),
+        SecretStrInput(
+            name="credentials_profile_name",
+            display_name="Credentials Profile Name",
+            advanced=True,
+            info="The name of the profile to use from your "
+            "~/.aws/credentials file. "
+            "If not provided, the default profile will be used.",
+            load_from_db=False,
         ),
         DropdownInput(
-            name="provider",
-            display_name="Provider",
-            info="The provider of the API key.",
-            options=[
-                "OpenAI",
-                "Azure",
-                "Anthropic",
-                "Replicate",
-                "Cohere",
-                "OpenRouter",
-                "Bedrock",
-            ],
-        ),
-        FloatInput(
-            name="temperature",
-            display_name="Temperature",
-            advanced=False,
-            required=False,
-            value=0.7,
-        ),
-        DictInput(
-            name="kwargs",
-            display_name="Kwargs",
-            advanced=True,
-            required=False,
-            is_list=True,
-            value={},
+            name="region_name",
+            display_name="Region Name",
+            value="us-west-2",
+            options=AWS_REGIONS,
+            info="The AWS region where your Bedrock resources are located.",
         ),
         DictInput(
             name="model_kwargs",
-            display_name="Model kwargs",
+            display_name="Model Kwargs",
             advanced=True,
-            required=False,
             is_list=True,
-            value={},
+            info="Additional keyword arguments to pass to the model.",
         ),
-        FloatInput(name="top_p", display_name="Top p", advanced=True, required=False, value=0.5),
-        IntInput(name="top_k", display_name="Top k", advanced=True, required=False, value=35),
-        IntInput(
-            name="n",
-            display_name="N",
+        MessageTextInput(
+            name="endpoint_url",
+            display_name="Endpoint URL",
             advanced=True,
-            required=False,
-            info="Number of chat completions to generate for each prompt. "
-            "Note that the API may not return the full n completions if duplicates are generated.",
-            value=1,
-        ),
-        IntInput(
-            name="max_tokens",
-            display_name="Max tokens",
-            advanced=False,
-            value=256,
-            info="The maximum number of tokens to generate for each chat completion.",
-        ),
-        IntInput(
-            name="max_retries",
-            display_name="Max retries",
-            advanced=True,
-            required=False,
-            value=6,
-        ),
-        BoolInput(
-            name="verbose",
-            display_name="Verbose",
-            advanced=True,
-            required=False,
-            value=False,
-        ),
-        BoolInput(
-            name="stream",
-            display_name="Stream",
-            info=STREAM_INFO_TEXT,
-            advanced=True,
-        ),
-        StrInput(
-            name="system_message",
-            display_name="System Message",
-            info="System message to pass to the model.",
-            advanced=True,
+            info="The URL of the Bedrock endpoint to use.",
         ),
     ]
 
-    def build_model(self) -> LanguageModel:
-        """Build the LiteLLM model."""
+    def build_model(self) -> LanguageModel:  # type: ignore[type-var]
+        """Build the Amazon Bedrock model using the provided inputs.
+
+        :return:
+        """
         try:
-            import litellm
-
-            litellm.drop_params = True
-            litellm.set_verbose = self.verbose
+            from langchain_aws import ChatBedrock
         except ImportError as e:
-            msg = "Could not import litellm python package. Please install it with `pip install litellm`"
-            raise ChatLiteLLMException(msg) from e
-        # Remove empty keys
-        if "" in self.kwargs:
-            del self.kwargs[""]
-        if "" in self.model_kwargs:
-            del self.model_kwargs[""]
-        # Report missing fields for Azure provider
-        if self.provider == "Azure":
-            if "api_base" not in self.kwargs:
-                msg = "Missing api_base on kwargs"
-                raise ValueError(msg)
-            if "api_version" not in self.model_kwargs:
-                msg = "Missing api_version on model_kwargs"
-                raise ValueError(msg)
-        output = ChatLiteLLM(
-            model=f"{self.provider.lower()}/{self.model}",
-            client=None,
-            streaming=self.stream,
-            temperature=self.temperature,
-            model_kwargs=self.model_kwargs if self.model_kwargs is not None else {},
-            top_p=self.top_p,
-            top_k=self.top_k,
-            n=self.n,
-            max_tokens=self.max_tokens,
-            max_retries=self.max_retries,
-            **self.kwargs,
-        )
-        output.client.api_key = self.api_key
+            msg = "langchain_aws is not installed. Please install it with `pip install langchain_aws`."
+            raise ImportError(msg) from e
+        try:
+            import boto3
+        except ImportError as e:
+            msg = "boto3 is not installed. Please install it with `pip install boto3`."
+            raise ImportError(msg) from e
+        if self.aws_access_key_id or self.aws_secret_access_key:
+            try:
+                session = boto3.Session(
+                    aws_access_key_id=self.aws_access_key_id,
+                    aws_secret_access_key=self.aws_secret_access_key,
+                    aws_session_token=self.aws_session_token,
+                )
+            except Exception as e:
+                msg = "Could not create a boto3 session."
+                raise ValueError(msg) from e
+        elif self.credentials_profile_name:
+            session = boto3.Session(profile_name=self.credentials_profile_name)
+        else:
+            session = boto3.Session()
 
+        client_params = {}
+        if self.endpoint_url:
+            client_params["endpoint_url"] = self.endpoint_url
+        if self.region_name:
+            client_params["region_name"] = self.region_name
+
+        boto3_client = session.client("bedrock-runtime", **client_params)
+        try:
+            output = ChatBedrock(
+                client=boto3_client,
+                model_id=self.model_id,
+                region_name=self.region_name,
+                model_kwargs=self.model_kwargs,
+                endpoint_url=self.endpoint_url,
+                streaming=self.stream,
+                beta_use_converse_api=True,
+            )
+        except Exception as e:
+            msg = "Could not connect to AmazonBedrock API."
+            raise ValueError(msg) from e
         return output

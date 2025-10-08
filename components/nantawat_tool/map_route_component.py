@@ -35,11 +35,12 @@ class MapRoute(Component):
         "Get Route Name Along the City Name. City Name must be in the "
         "format of 'City, Country' or 'City, State, Country'. "
         "Example usage: "
-        "'Bangkok, Thailand' 'Chiang Mai, Thailand' will return 'Bangkok' to 'Chiang Mai' Route Name. "
-        "This is useful for analyzing route names in a given context."
         "'Deinze, Flanders, Belgium' 'Gavere, Flanders, Belgium' 'Velzeke, Belgium' "
         "will return 'Deinze' to 'Gavere' to 'Velzeke' Route Name. "
-        "This is useful for analyzing route names in a given context."
+        "This is useful for analyzing route names in a given context. "
+        "'Torino, Piemonte, Italia' 'Limone Piemonte, Cuneo, Piemonte, Italia' "
+        "'Voiron, Grenoble, Isère, Auvergne-Rhône-Alpes, France métropolitaine, France'"
+        " will return 'Torino' to 'Limone Piemonte' to 'Voiron' Route Name. "
     )
     icon = "Globe"
     name = "RouteNameAnalyzer"
@@ -56,7 +57,7 @@ class MapRoute(Component):
             name="name_search",
             display_name="Search Name",
             info="The name of something that want to search for. "
-            "example: 'Bangkok Thailand' 'Chiang Mai, Thailand'."
+            "example: 'Torino, Piemonte, Italia' 'Limone Piemonte, Cuneo, Piemonte, Italia'."
             " This will be used to find the route name and analyze it.",
             tool_mode=True,
             is_list=True,
@@ -104,7 +105,6 @@ class MapRoute(Component):
 
         try:
             # Run the command in a subprocess
-            command_list = " ".join(command_list).split()
             result = subprocess.run(command_list, capture_output=True, text=True, check=True)  # noqa: S603
             output = result.stdout.strip()
 
