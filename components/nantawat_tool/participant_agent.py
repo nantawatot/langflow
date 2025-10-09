@@ -1,7 +1,8 @@
 import uuid
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
-from langflow.omniscien_backend.participant_langgraph.graph import researcher_agent
+# from langflow.omniscien_backend.participant_langgraph.graph import researcher_agent
+from langflow.omniscien_backend.agent_langgraph.graph import researcher_agent
 from langflow.schema import Message
 
 from lfx.custom.custom_component.component import Component

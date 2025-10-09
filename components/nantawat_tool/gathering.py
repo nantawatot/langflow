@@ -27,6 +27,7 @@ from lfx.io import (
     SliderInput,
     StrInput,
     TableInput,
+    MultilineInput
 )
 from lfx.log.logger import logger
 from lfx.schema.data import Data  # , DataFrame, Message
@@ -231,7 +232,7 @@ class GatheringComponent(LCToolComponent):
         #     input_types=["Data", "DataFrame", "Message"],
         #     required=True,
         # ),
-        StrInput(
+        MultilineInput(
             name="directory_name",
             display_name="Directory Name",
             info="Base Directory.",
@@ -239,7 +240,7 @@ class GatheringComponent(LCToolComponent):
             show=False,
             # tool_mode=True,
         ),
-        StrInput(
+        MultilineInput(
             name="file_name",
             display_name="File Name",
             info="Name file will be saved as (without extension).",

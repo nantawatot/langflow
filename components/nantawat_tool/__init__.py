@@ -1,6 +1,7 @@
 """init file custom component tool."""
 
 # from .aws_model_agent_component import AWSAgent
+from .convert_json_to_dataframe import ConverseDataFrame
 from .agent_graph import GraphAgent
 from .aws_model_component import AmazonBedrockComponent2
 from .embed_components import EmbedModelJ

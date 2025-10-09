@@ -189,8 +189,8 @@ dev = [
 
 [tool.uv.sources]
 langflow-base = { workspace = true }
-langflow = { workspace = true }
 lfx = { workspace = true }
+langflow = { workspace = true }
 
 [tool.uv.workspace]
 members = [
@@ -245,6 +245,9 @@ nv-ingest = [
 postgresql = [
     "sqlalchemy[postgresql_psycopg2binary]>=2.0.38,<3.0.0",
     "sqlalchemy[postgresql_psycopg]>=2.0.38,<3.0.0",
+]
+ab = [
+    "langflow[docling]",
 ]
 
 [tool.uv]
