@@ -119,6 +119,7 @@ class AmazonBedrockConverseComponent(LCModelComponent):
 
     def build_model(self) -> LanguageModel:  # type: ignore[type-var]
         try:
+            from botocore.config import Config
             from langchain_aws.chat_models.bedrock_converse import ChatBedrockConverse
         except ImportError as e:
             msg = "langchain_aws is not installed. Please install it with `pip install langchain_aws`."
@@ -172,6 +173,8 @@ class AmazonBedrockConverseComponent(LCModelComponent):
             init_params["additional_model_request_fields"] = additional_model_request_fields
 
         try:
+            config = Config(read_timeout=1500)
+            init_params["config"] = config
             output = ChatBedrockConverse(**init_params)
         except Exception as e:
             # Provide helpful error message with fallback suggestions

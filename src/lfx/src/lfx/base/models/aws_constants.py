@@ -99,6 +99,16 @@ AWS_MODELS_DETAILED = [
     create_model_metadata(
         provider="Amazon Bedrock", name="mistral.mistral-small-2402-v1:0", icon="Amazon", tool_calling=True
     ),
+    # Add More Models Here
+    create_model_metadata(
+        provider="Amazon Bedrock", name="us.meta.llama3-3-70b-instruct-v1:0", icon="Amazon", tool_calling=True
+    ),
+    create_model_metadata(
+        provider="Amazon Bedrock", name="us.meta.llama4-maverick-17b-instruct-v1:0", icon="Amazon", tool_calling=True
+    ),
+    create_model_metadata(
+        provider="Amazon Bedrock", name="us.meta.llama4-scout-17b-instruct-v1:0", icon="Amazon", tool_calling=True
+    ),
 ]
 
 # Generate backwards-compatible list from the metadata
