@@ -1,0 +1,91 @@
+{
+    "level 1": {
+        "category": "Horse Sports",
+        "description": "such as polo, equestrian and horse racing."
+    },
+    "level 2": {
+        "category": "Horse Racing",
+        "description": "equestrian sport that involves jockeys riding horses or being pulled along by horses.",
+        "reference_website": "https://www.topendsports.com/sport/list/horse-racing.htm"
+    }
+}
+
+
+
+Horse Racing → Sport Category
+
+Flat Racing → Focused subcategory on flat horse racing
+
+Jump Racing → Subcategory involving steeplechase or hurdle races
+
+Competition/Event → Race names, e.g., The Kentucky Derby, The Grand National
+
+Season/Year → Year the event occurs, e.g., 2023
+
+Race/Heat → Race rounds within an event day, e.g., Race 1, Race 2, Final Race
+
+Horse/Runner → Names of horses or competitors, e.g., Secretariat, Black Caviar, Red Rum
+
+Jockey → Names of riders, e.g., Frankie Dettori, John Velazquez, Ruby Walsh
+
+Trainer → Names of trainers, e.g., Bob Baffert, Aidan O'Brien, Gordon Elliott
+
+Owner → Horse owners, e.g., Sheikh Mohammed bin Rashid Al Maktoum, Coolmore Stud
+
+Team/Stable → Names of stables or training teams, e.g., Godolphin, Ballydoyle
+
+Role/Position → Roles of participants, e.g., Jockey, Trainer, Owner
+
+Track/Venue → Race locations, e.g., Churchill Downs, Ascot, Aintree
+
+Betting Odds → Betting odds, e.g., 5/1, 10/1
+
+Management → Event officials, e.g., Race Director, Event Manager, Steward
+
+Sponsors → Event sponsors, e.g., Lexus, Rolex
+
+Prize Money/Rewards → Prize amounts, e.g., $2 million, £1 million
+
+Time/Speed → Race performance stats, e.g., Race Time 2:00:34, Speed 35 mph
+
+
+
+Horse Sports → Sport Category
+Horse sports encompass a variety of equestrian competitions, where the skill of both horse and rider is tested. Horse racing is a prominent discipline focused on speed and strategy, attracting worldwide audiences and betting interest.
+├── Horse Racing → The equestrian sport discipline focused on here, involving timed races on tracks with various formats.
+
+│   ├── Discipline Type → Different race types such as:
+│       • Flat Racing – Races conducted on a level track without obstacles.
+│       • Jump Racing – Races involving hurdles or fences that horses must jump over.
+
+│   │   ├── Competition/Event → Named prestigious races like The Kentucky Derby, The Grand National.
+
+│   │   │   ├── Season/Year → The year or season of the event, e.g., 2023.
+
+│   │   │   ├── Track/Venue → Racecourses hosting events, e.g., Churchill Downs, Ascot, Aintree.
+
+│   │   │   ├── Race/Heat → Individual races or heats within the event, e.g., Race 1, Race 2, Final Race.
+
+│   │   │   ├── Horse/Runner → Participating horses or competitors, such as Secretariat, Black Caviar, Red Rum.
+
+│   │   │   │   ├── Jockey → Riders controlling the horses, e.g., Frankie Dettori, John Velazquez, Ruby Walsh.
+
+│   │   │   │   ├── Trainer → Professionals responsible for preparing the horses, e.g., Bob Baffert, Aidan O'Brien, Gordon Elliott.
+
+│   │   │   │   ├── Owner → Individuals or entities owning the horses, such as Sheikh Mohammed bin Rashid Al Maktoum, Coolmore Stud.
+
+│   │   │   │   ├── Team/Stable → Training operations or stables managing horses, e.g., Godolphin, Ballydoyle.
+
+│   │   │   │   ├── Betting Odds → Odds offered on horses, e.g., 5/1, 10/1, indicating likelihood and payouts.
+
+│   │   │   │   ├── Time/Speed → Performance metrics such as race completion time (e.g., 2:00:34) and speed (e.g., 35 mph).
+
+│   │   │   ├── Management → Event officials and coordinators like Race Director, Event Manager, Steward.
+
+│   │   │   ├── Sponsors → Sponsors supporting events, e.g., Lexus, Rolex.
+
+│   │   │   ├── Prize Money/Rewards → Financial and trophy rewards, e.g., $2 million, £1 million.
+
+
+
+

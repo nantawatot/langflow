@@ -1,0 +1,88 @@
+{
+    "level 1": {
+        "category": "Racket Sports",
+        "description": "such as tennis, squash, badminton and table tennis."
+    },
+    "level 2": {
+        "category": "Tennis",
+        "description": "is one of the most popular individual sports in the world.",
+        "reference_website": "https://www.topendsports.com/sport/list/tennis.htm"
+    }
+}
+
+Top Sport Category → Sport categories, such as Racket Sports, Ball Sports, Combat Sports, Endurance Sports
+├── Sub Sport Category → Specific sub-categories, such as Tennis, Squash, Badminton, Table Tennis
+│   ├── Discipline Type → Type of competition, such as Singles, Doubles, Mixed Doubles
+│   │   ├── Competition/Event → Name of the event, such as Wimbledon, Australian Open, US Open
+│   │   │   ├── Season/Year → Year of the event, e.g., 2023
+│   │   │   ├── Round/Match → Competition rounds, e.g., First Round, Quarterfinals, Semifinals, Final
+│   │   │   ├── Venue → Location of the event, e.g., Melbourne Park, Roland Garros, All England Club
+│   │   │   ├── Court Surface → Types of courts, e.g., Grass, Clay, Hard Court
+│   │   │   ├── Team/Club → Training teams or clubs, e.g., Rafael Nadal Academy, Mouratoglou Tennis Academy
+│   │   │   │   ├── Player/Athlete → Players such as Novak Djokovic, Rafael Nadal, Serena Williams, Naomi Osaka
+│   │   │   │   │   ├── Role/Position → Titles or statuses like World No. 1, Top Seed, Wild Card
+│   │   │   │   │   ├── Equipment/Brand/Model → Gear like rackets (Wilson Blade 98, Babolat Pure Drive)
+│   │   │   │   │   ├── Ranking → Player rankings, e.g., ATP Rankings, WTA Rankings
+│   │   │   │   ├── Management → Staff such as Coach, Agent, Tournament Director
+│   │   │   │   ├── Sponsors → Athlete sponsors like Nike, Rolex, Wilson
+│   │   │   ├── Prize Money/Rewards → Prizes such as $2.5 million, £1 million
+│   │   │   ├── Broadcasting/Media → Coverage channels like ESPN, Eurosport, Tennis Channel
+│   │   │   ├── Federation → Governing bodies like ITF, ATP, WTA
+│   │   │   ├── Tournament Type → Competition types, e.g., Grand Slam, Masters 1000
+│   │   │   ├── Grand Slam → Top-level tournaments such as Australian Open, French Open, Wimbledon, US Open
+
+
+
+Tennis → Sport Category
+Grand Slam → Top-level tournaments such as Australian Open, French Open, Wimbledon, US Open
+Discipline Type → Competition formats, e.g., Singles, Doubles, Mixed Doubles
+Competition/Event → Tournament names, e.g., Wimbledon, Australian Open, US Open
+Season/Year → Year of the event, e.g., 2023
+Round/Match → Competition rounds, e.g., First Round, Quarterfinals, Semifinals, Final
+Player/Athlete → Athlete names, e.g., Novak Djokovic, Rafael Nadal, Serena Williams, Naomi Osaka
+Role/Position → Athlete roles or status, e.g., World No. 1, Top Seed, Wild Card
+Equipment/Brand/Model → Equipment used, e.g., Rackets such as Wilson Blade 98, Babolat Pure Drive
+Management → Team officials, e.g., Coach, Agent, Tournament Director
+Sponsors → Athlete sponsors, e.g., Nike, Rolex, Wilson
+Ranking → Athlete rankings, e.g., ATP Rankings, WTA Rankings
+Venue → Tournament locations, e.g., Melbourne Park, Roland Garros, All England Club
+Prize Money/Rewards → Prize amounts or awards, e.g., $2.5 million, £1 million
+Team/Club → Training academies or clubs, e.g., Rafael Nadal Academy
+Broadcasting/Media → Media outlets broadcasting events, e.g., ESPN, Eurosport, Tennis Channel
+Federation → Organizing bodies, e.g., International Tennis Federation (ITF), Association of Tennis Professionals (ATP), Women's Tennis Association (WTA)
+
+
+
+
+Racket Sports → Sport Category
+├── Tennis → Focused sub-sport category
+│   ├── Discipline Type → Competition formats such as Singles, Doubles, Mixed Doubles
+│   │   ├── Competition/Event → Tournaments like Wimbledon, Australian Open, US Open
+│   │   │   ├── Season/Year → Event year, e.g., 2023
+│   │   │   ├── Venue → Locations such as Melbourne Park, Roland Garros, All England Club
+│   │   │   ├── Court Surface → Types of courts: Grass, Clay, Hard Court
+│   │   │   ├── Round/Match → Competition stages like First Round, Quarterfinals, Semifinals, Final
+│   │   │   ├── Team/Club → Training teams or clubs, e.g., Rafael Nadal Academy
+│   │   │   │   ├── Player/Athlete → Players such as Novak Djokovic, Rafael Nadal, Serena Williams, Naomi Osaka
+│   │   │   │   │   ├── Role/Position → Titles or statuses like World No. 1, Top Seed, Wild Card
+│   │   │   │   │   ├── Equipment/Brand/Model → Gear like rackets (Wilson Blade 98, Babolat Pure Drive)
+│   │   │   │   │   ├── Ranking → Player rankings, e.g., ATP Rankings, WTA Rankings
+│   │   │   │   ├── Management → Staff such as Coach, Agent, Tournament Director
+│   │   │   │   ├── Sponsors → Athlete sponsors like Nike, Rolex, Wilson
+│   │   │   ├── Prize Money/Rewards → Prizes such as $2.5 million, £1 million
+│   │   │   ├── Broadcasting/Media → Coverage channels like ESPN, Eurosport, Tennis Channel
+│   │   │   ├── Federation → Governing bodies like ITF, ATP, WTA
+
+
+
+
+
+
+
+
+
+
+
+
+
+

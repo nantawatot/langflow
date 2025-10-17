@@ -1,0 +1,101 @@
+{
+    "level 1": {
+        "category": "Football Sports",
+        "description": "there are many sports that are called 'football' such as American football, Association football (soccer), Rugby and Aussie Rules, but equally many variations of these such as beach and indoor soccer, touch rugby and flag football."
+    },
+    "level 2": {
+        "category": "Rugby Union",
+        "description": "A form of rugby football similar to Rugby League but with different rules, such as contested scrums and lineouts.",
+        "reference_website": "https://www.topendsports.com/sport/list/rugby-union.htm"
+    }
+}
+
+
+
+
+Rugby → Sport Category
+
+Rugby Union → Playing style focusing on two teams with scrums and lineouts
+
+Rugby League → Playing style with different rules from Rugby Union, emphasizing offense and defense
+
+Discipline Type → Competition formats, e.g., International, Club, Sevens, Super Rugby
+
+Competition/Event → Tournament names, e.g., Rugby World Cup, Six Nations Championship, Super Rugby
+
+Season/Year → Year the event occurs, e.g., 2023
+
+Match/Stage → Competition stages, e.g., Quarter-finals, Semi-finals, Final
+
+Team/Club → Participating teams, e.g., New Zealand All Blacks, South Africa Springboks, England Rugby
+
+Athlete → Player names, e.g., Richie McCaw, Jonny Wilkinson, Siya Kolisi
+
+Role/Position → Player positions, e.g., Fly-half, Lock, Scrum-half, Fullback, Prop
+
+Equipment/Brand/Model → Player gear, e.g., Nike Jerseys, Adidas Cleats, Oakley Sunglasses
+
+Management → Team officials, e.g., Head Coach, Assistant Coach, Team Manager
+
+Sponsors → Team sponsors, e.g., Adidas, Coca-Cola, Emirates
+
+Referee → Match officials, e.g., Nigel Owens, Jerome Garces
+
+Venue → Event locations, e.g., Twickenham, Eden Park, Stade de France
+
+League → Related leagues, e.g., Rugby Premiership, Top 14, Super Rugby
+
+Ranking → Team rankings, e.g., World Rugby Rankings, Six Nations Standings
+
+Award → Player/team awards, e.g., Player of the Year, Best Try of the Tournament
+
+Fanbase → Team fan groups, e.g., "All Blacks Nation," "Springboks Supporters"
+
+
+
+
+Football Sports → Sport Category
+
+├── Rugby Union → A rugby code focused on 15-a-side matches, played internationally and at club level.
+
+│   ├── Discipline Type → Competition formats such as International Tests, Club Leagues, Sevens, and Super Rugby.
+
+│   │   ├── Competition/Event → Major tournaments like Rugby World Cup, Six Nations Championship, Super Rugby.
+
+│   │   │   ├── Venue → Locations of matches such as Twickenham, Eden Park, Stade de France.
+
+│   │   │   ├── Season/Year → Year of the competition, e.g., 2023.
+
+│   │   │   ├── Match/Stage → Competition phases including Quarter-finals, Semi-finals, Final.
+
+│   │   │   ├── Team/Club → Participating teams such as New Zealand All Blacks, South Africa Springboks, England Rugby.
+
+│   │   │   │   ├── Athlete → Players like Richie McCaw, Jonny Wilkinson, Siya Kolisi.
+
+│   │   │   │   │   ├── Role/Position → Player roles such as Fly-half, Lock, Scrum-half, Fullback, Prop.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Player gear, e.g., Nike Jerseys, Adidas Cleats, Oakley Sunglasses.
+
+│   │   │   │   ├── Management → Staff including Head Coach, Assistant Coach, Team Manager.
+
+│   │   │   │   ├── Sponsors → Team sponsors such as Adidas, Coca-Cola, Emirates.
+
+│   │   │   │   ├── Ranking → Team rankings like World Rugby Rankings, Six Nations Standings.
+
+│   │   │   │   ├── Fanbase → Supporter groups e.g., "All Blacks Nation," "Springboks Supporters."
+
+│   │   │   ├── Referee → Match officials such as Nigel Owens, Jerome Garces.
+
+│   │   │   ├── Award → Honors like Player of the Year, Best Try of the Tournament.
+
+
+
+
+
+
+
+
+
+
+
+

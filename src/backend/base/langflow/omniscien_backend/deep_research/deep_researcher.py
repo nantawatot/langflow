@@ -17,11 +17,6 @@ from langflow.logging import logger
 from langflow.omniscien_backend.deep_research.configuration import (
     Configuration,
 )
-from langflow.omniscien_backend.deep_research.prompts import (
-    final_report_generation_prompt,
-    lead_researcher_prompt,
-    transform_messages_into_research_topic_prompt,
-)
 from langflow.omniscien_backend.deep_research.state import (
     AgentInputState,
     AgentState,
@@ -61,13 +56,13 @@ async def write_research_brief(state: AgentState, config: RunnableConfig) -> Com
     )
 
     # Step 2: Generate structured research brief from user messages
-    prompt_content = transform_messages_into_research_topic_prompt.format(
+    prompt_content = configurable.transform_messages_into_research_topic_prompt.format(
         messages=get_buffer_string(state.get("messages", [])), date=get_today_str()
     )
     response = await research_model.ainvoke([HumanMessage(content=prompt_content)])
 
     # Step 3: Initialize supervisor with research brief and instructions
-    supervisor_system_prompt = lead_researcher_prompt.format(
+    supervisor_system_prompt = configurable.lead_researcher_prompt.format(
         date=get_today_str(),
         max_concurrent_research_units=configurable.max_concurrent_research_units,
         max_researcher_iterations=configurable.max_researcher_iterations,
@@ -122,21 +117,29 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
     while current_retry <= max_retries:
         try:
             # Create comprehensive prompt with all research context
-            final_report_prompt = final_report_generation_prompt.format(
-                research_brief=state.get("research_brief", ""),
-                messages=get_buffer_string(state.get("messages", [])),
-                findings=findings,
-                date=get_today_str(),
-            )
+            if configurable.output_type == "text":
+                final_report_prompt = configurable.final_report_generation_prompt.format(
+                    research_brief=state.get("research_brief", ""),
+                    messages=get_buffer_string(state.get("messages", [])),
+                    findings=findings,
+                    date=get_today_str(),
+                )
+            else:
+                final_report_prompt = configurable.final_json_generation_prompt.format(
+                    research_brief=state.get("research_brief", ""),
+                    messages=get_buffer_string(state.get("messages", [])),
+                    findings=findings,
+                    date=get_today_str(),
+                )
 
             # Generate the final report
             final_report = await writer_model.ainvoke([HumanMessage(content=final_report_prompt)])
-
+            print(final_report.content)
             # Return successful report generation
             return {"final_report": final_report.content, "messages": [final_report], **cleared_state}
 
         except Exception as e:
-            logger.debug(f"Error during final report generation: {e}")
+            print(f"Error during final report generation: {e}")
             # Handle token limit exceeded errors with progressive truncation
             if is_token_limit_exceeded(e):
                 current_retry += 1

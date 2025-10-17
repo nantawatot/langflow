@@ -1,0 +1,99 @@
+{
+    "level 1": {
+        "category": "Volleyball-Type Sports",
+        "description": "sports like volleyball which involve hitting an object back and forth over a net."
+    },
+    "level 2": {
+        "category": "Indoor Volleyball",
+        "description": "A team sport played indoors on a hardwood surface, originally developed in 1896 at Springfield College, Massachusetts.",
+        "reference_website": "https://www.topendsports.com/sport/list/volleyball.htm"
+    }
+}
+
+
+
+
+Volleyball → Sport Category
+
+Indoor Volleyball → Subcategory focused on indoor court volleyball competitions
+
+Beach Volleyball → Subcategory focused on beach volleyball competitions
+
+Competition/Event → Tournament names, e.g., FIVB Volleyball World Cup, Olympic Games, Volleyball Nations League (VNL)
+
+Season/Year → Year the event takes place, e.g., 2023
+
+Round/Match → Competition stages, e.g., Preliminary Round, Quarterfinals, Semifinals, Final
+
+Team/Club → Participating teams, e.g., Brazil, Italy, USA, Russia
+
+Athlete → Athlete names, e.g., Karch Kiraly, Giba, Tijana Bošković, Zhu Ting
+
+Role/Position → Athlete roles, e.g., Outside Hitter, Setter, Libero, Opposite
+
+Equipment/Brand/Model → Equipment used, e.g., Volleyball such as Mikasa MVA200, Adidas Volleyball Shoes
+
+Management → Team officials, e.g., Team Manager, Head Coach, Assistant Coach
+
+Sponsors → Team sponsors, e.g., Nike, Mizuno, Asics
+
+Ranking → Team and athlete rankings, e.g., FIVB World Rankings
+
+Venue → Event locations, e.g., Maracanãzinho (Brazil), Palazzetto dello Sport (Italy)
+
+Prize Money/Rewards → Prize amounts or awards, e.g., $1 million, Gold Medal
+
+Referee/Umpire → Match officials, e.g., FIVB Umpire, International Referee
+
+Broadcasting/Media → Media outlets broadcasting matches, e.g., ESPN, FIVB TV, Volleyball TV
+
+Federation → Organizing bodies, e.g., Fédération Internationale de Volleyball (FIVB), National Federations
+
+
+
+Volleyball-Type Sports → Sport Category
+
+├── Indoor Volleyball → Focused Subcategory
+
+│ ├── Discipline Type → Competition formats, e.g., National Team, Club, University, Youth
+
+│ │ ├── Competition/Event → Tournament names, e.g., FIVB Volleyball World Cup, Olympic Games, Volleyball Nations League (VNL)
+
+│ │ │ ├── Season/Year → Event year, e.g., 2023
+
+│ │ │ ├── Venue → Competition locations, e.g., Maracanãzinho (Brazil), Palazzetto dello Sport (Italy)
+
+│ │ │ ├── Round/Match → Competition stages, e.g., Preliminary Round, Quarterfinals, Semifinals, Final
+
+│ │ │ ├── Team/Club → Participating teams, e.g., Brazil, Italy, USA, Russia
+
+│ │ │ │ ├── Athlete → Players, e.g., Karch Kiraly, Giba, Tijana Bošković, Zhu Ting
+
+│ │ │ │ │ ├── Role/Position → Player positions, e.g., Outside Hitter, Setter, Libero, Opposite
+
+│ │ │ │ │ ├── Equipment/Brand/Model → Gear used by players, e.g., Mikasa MVA200 volleyball, Adidas volleyball shoes
+
+│ │ │ │ ├── Management → Team officials, e.g., Team Manager, Head Coach, Assistant Coach
+
+│ │ │ │ ├── Sponsors → Team sponsors, e.g., Nike, Mizuno, Asics
+
+│ │ │ │ ├── Ranking → Team and player rankings, e.g., FIVB World Rankings
+
+│ │ │ ├── Prize Money/Rewards → Monetary prizes or awards, e.g., $1 million, Gold Medal
+
+│ │ │ ├── Referee/Umpire → Officials overseeing matches, e.g., FIVB Umpire, International Referee
+
+│ │ │ ├── Broadcasting/Media → Media outlets covering events, e.g., ESPN, FIVB TV, Volleyball TV
+
+│ │ │ ├── Federation → Governing bodies organizing competitions, e.g., Fédération Internationale de Volleyball (FIVB), National Federations
+
+
+
+
+
+
+
+
+
+
+

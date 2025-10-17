@@ -1,0 +1,53 @@
+{
+    "level 1": {
+        "category": "Cycling Sports",
+        "description": "sports involving bicycles."
+    },
+    "level 2": {
+        "category": "Road Cycling",
+        "description": "cycle races held on paved roads, usually over several hours or days.",
+        "reference_website": "https://www.topendsports.com/sport/list/cycling-road.htm"
+    }
+}
+
+
+Cycling → The general category of the sport that includes all types of competitive cycling disciplines such as road cycling, track cycling, mountain biking, BMX, and more.
+Road Cycling → A specialized sub-discipline of cycling that focuses on races conducted on paved roads. It includes individual and team races that range from single-day classics to multi-stage events like the Tour de France.
+Discipline Type → The format or structure of the road cycling event. Common types include:
+    Stage Race – A race spanning multiple days with cumulative times (e.g., Tour de France).
+    Time Trial – Riders race individually or in teams against the clock.
+    One-day Race – A race completed in a single day (e.g., Paris–Roubaix).
+Competition/Event → The official name of a race or cycling event, often sanctioned by a governing body (like UCI). Examples include world-renowned events such as the Tour de France, Giro d’Italia, and Vuelta a España.
+Season/Year → The year in which the competition takes place. This helps organize event editions chronologically, e.g., Tour de France 2023.
+Stage/Match/Round → A specific daily race segment in a multi-day event. Each stage may vary in terrain and difficulty (e.g., flat stage, mountain stage, time trial) and is identified as Stage 1, Stage 2, etc.
+Team/Club → A professional or amateur cycling team registered to compete in events. Each team is composed of athletes, support staff, and management. Examples: Jumbo-Visma, UAE Team Emirates.
+Athlete → A professional rider who competes for a team in races. Cyclists often have specialized roles within the team. Examples: Jonas Vingegaard, Tadej Pogačar.
+Role/Position → The functional role or specialization of an athlete within a team. These include:
+    Climber – Excels in mountain stages.
+    Sprinter – Strong in fast, flat finishes.
+    All-rounder – Versatile across stage types.
+    Domestique – Supports team leaders during races.
+Equipment/Brand/Model → The cycling gear used by athletes, including bicycles, helmets, and accessories. Brands and models often affect performance. Examples: Pinarello Dogma F, Colnago V4Rs.
+Management → The leadership team responsible for overseeing the riders and race strategy. This includes roles like:
+    Team Manager – Oversees overall team operations.
+    Sport Director – Manages tactical decisions during races.
+Sponsors → Companies or organizations that provide financial or material support to teams. Sponsors typically appear in team names and branding. Examples: Jumbo, Visma, UAE, Emirates.
+
+
+Cycling Sports → The overarching sport category that includes all forms of competitive cycling, such as road racing, mountain biking, track cycling, BMX, and more.
+├── Road Cycling → A discipline of cycling that takes place on paved roads. It includes single-day races, time trials, and multi-stage tours, and is the most globally recognized form of cycling competition.
+│   ├── Discipline Type → The type or structure of the race format used in road cycling. Common formats include:
+│   │   - Stage Race: Multi-day events with cumulative timing (e.g., Tour de France).
+│   │   - Time Trial: Riders race individually or as a team against the clock.
+│   │   - One-day Race: A single race completed within one day (e.g., Milan–San Remo).
+│   │   ├── Competition/Event → The official name of a cycling race or tournament. These are organized by professional bodies and can vary in scale from local events to prestigious international tours (e.g., Tour de France, Giro d’Italia).
+│   │   │   ├── Stage/Match/Round → A defined segment or phase of a race, especially in stage races. Each stage can have a different route and profile (e.g., flat, mountain, time trial) and takes place on a specific day (e.g., Stage 1, Stage 2).
+│   │   │   ├── Team/Club → A registered professional or amateur cycling team participating in the event. Teams consist of athletes, coaches, directors, and support staff. Examples include Jumbo-Visma, UAE Team Emirates.
+│   │   │   │   ├── Athlete → An individual cyclist competing for a team in the event. Athletes often specialize in roles such as climber, sprinter, or domestique. Examples: Jonas Vingegaard, Tadej Pogačar.
+│   │   │   │   │   - Role/Position → The specific function or specialization of an athlete within a team. Common roles include: Climber (excels in mountain stages), Sprinter (fast in flat finishes), All-rounder (versatile across different terrains), and Domestique (supports team leaders).
+│   │   │   │   │   - Equipment/Brand/Model → The specific gear and bicycles used by athletes, which can influence performance. This includes brands and models of bikes, helmets, and other cycling accessories (e.g., Pinarello Dogma F, Colnago V4Rs).
+│   │   │   │   │   - Ranking → The position of an athlete on the UCI road cycling rankings, which reflects their performance in competitions over a season e.g. Tadej Pogačar ranking number 1.
+│   │   │   │   │   - BIB Number → A unique identifier assigned to each athlete for a specific event, typically displayed on their jersey. It helps in tracking performance and identification e.g. BIB 101.
+│   │   │   │   ├── Management → The leadership and organizational staff of a team. This includes roles like Team Manager and Sport Director, who oversee strategy, logistics, and day-to-day team operations during races.
+│   │   │   │   ├── Sponsors → Companies or organizations that provide financial or material support to the team. Sponsors are often featured in the team’s name, jerseys, and equipment. Examples: Jumbo, Visma, UAE, Emirates.
+

@@ -1,0 +1,93 @@
+{
+    "level 1": {
+        "category": "Martial Arts",
+        "description": "such as the Olympic sports of judo, taekwondo and karate, and the multitude of wrestling sports."
+    },
+    "level 2": {
+        "category": "Boxing",
+        "description": "a combat sport in which two players throw punches at each other.",
+        "reference_website": "https://www.topendsports.com/sport/list/boxing.htm"
+    }
+}
+
+
+
+Boxing → Sport Category
+
+Professional Boxing → Focused subcategory of professional boxing matches
+
+Discipline Type → Competition formats, e.g., Title Fight, Non-title Fight, Exhibition Match
+
+Competition/Event → Tournament or event names, e.g., WBC World Heavyweight Championship, Boxing Day Fight Night, Golden Gloves
+
+Season/Year → Year the event occurs, e.g., 2023, 2024
+
+Stage/Match/Round → Competition stages, e.g., Round 1, Quarterfinal, Final
+
+Team/Club → Promoters or organizations involved, e.g., Top Rank, Matchroom Boxing, PBC (Premier Boxing Champions)
+
+Athlete → Boxer names, e.g., Tyson Fury, Canelo Alvarez, Muhammad Ali
+
+Role/Position → Boxer categories or roles, e.g., Heavyweight, Middleweight, Welterweight, Champion, Challenger
+
+Equipment/Brand/Model → Boxing gear, e.g., Everlast Boxing Gloves, Cleto Reyes, Ringside Boxing Shoes
+
+Management → Supporting team, e.g., Boxing Promoter, Coach, Trainer, Fight Manager
+
+Sponsors → Sponsors supporting athletes and events, e.g., Adidas, Under Armour, Everlast, Hennessy, MGM Grand
+
+Title/Championship → Championship titles or sanctioning bodies, e.g., WBA, WBC, IBF, WBO, Unified Champion
+
+Venue/Location → Event locations, e.g., Madison Square Garden, MGM Grand Garden Arena, T-Mobile Arena
+
+Match Result → Outcomes, e.g., Win, Loss, Draw, Knockout (KO), Technical Knockout (TKO)
+
+Boxing Rules → Key rules, e.g., 10-Count Rule, Standing 8 Count, Low Blow, Knockdown
+
+Judge/Referee → Officials overseeing matches, e.g., Referee, Ringside Judges
+
+
+
+
+Martial Arts → Sport Category
+Combat sports that focus on fighting techniques, physical strength, and strategy. Boxing is a popular martial art emphasizing punches with gloved hands in a regulated ring.
+├── Boxing → The specific martial arts discipline focused on here, involving two competitors fighting in a ring using punches within set rules.
+
+│   ├── Level → Competition tier or professional status, such as Professional Boxing or Amateur Boxing.
+
+│   │   ├── Discipline Type → Formats of boxing matches, including:
+│   │       • Title Fight – Contests where a championship belt is at stake.
+│   │       • Non-title Fight – Regular bouts without championship implications.
+│   │       • Exhibition Match – Non-competitive or charity bouts often for entertainment.
+
+│   │   │   ├── Competition/Event → Named boxing events or championships, e.g., WBC World Heavyweight Championship, Boxing Day Fight Night, Golden Gloves.
+
+│   │   │   │   ├── Season/Year → The year or season when the event occurs (e.g., 2023, 2024).
+
+│   │   │   │   ├── Venue/Location → The arenas or venues hosting the matches, such as Madison Square Garden, MGM Grand Garden Arena, T-Mobile Arena.
+
+│   │   │   │   ├── Team/Club → Boxing promotional teams or organizations involved, e.g., Top Rank, Matchroom Boxing, Premier Boxing Champions (PBC).
+
+│   │   │   │   │   ├── Athlete → Professional boxers competing in the matches, e.g., Tyson Fury, Canelo Alvarez, Muhammad Ali.
+
+│   │   │   │   │   │   ├── Role/Position → Boxer’s category or role, including weight classes and status such as Heavyweight, Middleweight, Welterweight, Champion, Challenger.
+
+│   │   │   │   │   │   ├── Equipment/Brand/Model → Gear used by boxers, like Everlast Boxing Gloves, Cleto Reyes gloves, Ringside Boxing Shoes.
+
+│   │   │   │   │   ├── Management → Team personnel managing the boxer’s career and training, such as Boxing Promoter, Coach, Trainer, Fight Manager.
+
+│   │   │   │   │   ├── Sponsors → Companies backing boxers or events, e.g., Adidas, Under Armour, Everlast, Hennessy, MGM Grand.
+
+│   │   │   │   ├── Title/Championship → Official championship titles or sanctioning bodies, e.g., WBA, WBC, IBF, WBO, Unified Champion.
+
+│   │   │   │   ├── Judge/Referee → Officials overseeing the match, such as Referee and Ringside Judges.
+
+
+
+
+
+
+
+
+
+

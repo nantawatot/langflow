@@ -1,0 +1,82 @@
+Football → The sport category that refers to all types of football games globally. This includes Association Football (soccer), American Football, Rugby, and other regional variations.
+
+Association Football → The standard form of football (commonly known as “soccer” in some countries). This is the globally recognized format governed by FIFA, played by two teams of 11 players each using a round ball on a rectangular field.
+
+Competition/Event → The name of a football tournament or official event organized by national or international governing bodies. Examples include the FIFA World Cup, UEFA Champions League, Premier League, etc.
+
+Season/Year → The year or season in which the competition is held. This is useful for organizing data chronologically, e.g., FIFA World Cup 2022.
+
+Round/Stage → The phase of the tournament within the event structure. Common examples:
+
+    Group Stage – Teams are split into groups and play round-robin matches.
+
+    Knockout Stage – Teams compete in elimination rounds.
+
+    Final – The last match that determines the champion.
+
+Match → A single football game between two teams. Typically referenced by the names of the competing teams (e.g., Brazil vs Serbia), along with its result, date, and venue.
+
+Team/Club → The name of a national or club team participating in the match. For example, national teams like Brazil, Serbia, or club teams like Manchester United, Barcelona.
+
+Athlete → A football player who participates in matches as part of a team. Examples: Neymar, Dušan Tadić.
+
+Role/Position → The position a player holds on the field, which defines their responsibilities. Examples:
+
+    Forward – Attacking role focused on scoring goals.
+
+    Midfielder – Controls the flow between attack and defense.
+
+    Goalkeeper – Prevents the opposing team from scoring.
+
+    Defender – Protects their goal by stopping opposing attackers.
+
+Team Captain → A designation that indicates whether a player is the captain of the team. The captain often leads the team on the field, communicates with referees, and represents the team in official events. (e.g., true if the player is captain)
+
+Club → The professional football club a player is contracted with. This is separate from national team duty. Examples: Paris Saint-Germain, Ajax, Manchester City.
+
+National Team → The national team that the player represents in international competitions. Examples: Brazil, Serbia, France.
+
+Management → The coaching and leadership staff of a football team. Key roles include:
+
+    Head Coach – Responsible for tactical decisions, team selection, and match-day strategy.
+
+    Assistant Coach – Supports the head coach in training and strategy.
+    Examples: Tite (Brazil’s coach), Dragan Stojković (Serbia’s coach).
+
+Sponsors → Companies or organizations that financially support a team, event, or player. Sponsors may appear on team kits, advertising, and promotional material. Examples: Nike, Budweiser, Adidas, Gazprom.
+
+
+
+
+
+Football → Sport Category A global team sport where two teams compete to score goals by moving a ball into the opponent’s net. It includes various formats, with Association Football being the most popular.
+
+├── Association Football → The most widely recognized form of football (soccer), governed by FIFA. Played with 11 players per side. Excludes formats like American football and futsal.
+
+│   ├── Discipline Type → Defines the structure or format of the competition:
+│   │       • League Tournament – Season-based competition with point accumulation (e.g., Premier League).
+│   │       • Knockout Tournament – Elimination-based format; losing teams are removed from the competition (e.g., FA Cup).
+│   │       • Penalty Shootout – Tie-breaking method where teams take alternate penalty kicks.
+
+│   │   ├── Competition/Event → The official name of a football tournament or event (e.g., FIFA World Cup, UEFA Euro, Copa America).
+
+│   │   │   ├── Round/Stage → Phases within a competition to organize progression:
+│   │   │   │       • Group Stage – Teams play round-robin matches within groups.
+│   │   │   │       • Knockout Stage – Single elimination rounds (e.g., Quarterfinals, Semifinals).
+│   │   │   │       • Final – The championship match that determines the winner.
+
+│   │   │   │   ├── Match → A single football game between two teams (e.g., Brazil vs Serbia). Includes details like date, venue, and score.
+
+│   │   │   ├── Team/Club → The official football team participating in a competition. Can be a national team (e.g., Brazil, Serbia) or a professional club (e.g., Manchester United, Real Madrid).
+
+│   │   │   │   ├── Athlete → A professional football player representing a team (e.g., Neymar, Dušan Tadić).
+
+│   │   │   │   ├── Management → Team leadership and coaching staff:
+│   │   │   │       • Head Coach – Main strategist and decision-maker (e.g., Tite for Brazil).
+│   │   │   │       • Assistant Coach – Supports the head coach in planning and training (e.g., Dragan Stojković for Serbia).
+
+│   │   │   │   ├── Sponsors → Organizations or brands financially supporting the team (e.g., Nike, Budweiser, Adidas, Gazprom).
+
+
+
+

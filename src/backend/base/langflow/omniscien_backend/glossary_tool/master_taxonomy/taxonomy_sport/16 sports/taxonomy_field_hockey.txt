@@ -1,0 +1,87 @@
+{
+    "level 1": {
+        "category": "Hockey Sports",
+        "description": "such as field hockey, ice hockey and roller hockey."
+    },
+    "level 2": {
+        "category": "Field Hockey",
+        "description": "A widely played team sport where players use curved sticks to hit a hard ball into the opponent\u2019s goal on grass or artificial turf.",
+        "reference_website": "https://www.topendsports.com/sport/list/hockey-field.htm"
+    }
+}
+
+
+
+
+Field Hockey → Sport Category
+
+Outdoor Field Hockey → Focused subcategory on outdoor 11-a-side field hockey
+
+Discipline Type → Competition formats, e.g., 11-a-side, 5-a-side
+
+Competition/Event → Tournament names, e.g., FIH Hockey World Cup, FIH Pro League
+
+Season/Year → Year the event occurs, e.g., 2023
+
+Stage/Match/Round → Competition phases per day, e.g., Quarterfinals, Semifinals, Final
+
+Team/Club → Participating teams, e.g., India, Netherlands, Germany, Australia
+
+Athlete → Player names, e.g., Manpreet Singh, Eva de Goede, Alexander Hendrickx
+
+Role/Position → Player positions, e.g., Forward, Midfielder, Defender, Goalkeeper
+
+Equipment/Brand/Model → Player gear, e.g., Hockey sticks like Adidas Stiff, Grays GX1000
+
+Management → Team officials, e.g., Team Manager, Head Coach, Assistant Coach
+
+Sponsors → Team sponsors, e.g., OBO, Asics, Vantage
+
+Venue → Event locations, e.g., Kalinga Stadium (Bhubaneswar), The Wagener Stadium (Amsterdam)
+
+Referee → Match officials, e.g., FIH Umpires, International Umpires
+
+Ranking/Standings → Team rankings and tournament results, e.g., World Rankings, Tournament Standings
+
+
+
+
+Hockey Sports → Sport Category
+A fast-paced team sport played with sticks and a ball or puck, requiring skill, strategy, and teamwork. Field hockey is a popular variant played worldwide on grass or artificial turf.
+├── Field Hockey → The specific hockey discipline focused on here, typically played with 11 players per side on a large field.
+
+│   ├── Discipline Type → Competition formats within field hockey, such as:
+│       • 11-a-side – Standard full-team matches.
+│       • 5-a-side – A smaller, faster-paced variant with fewer players.
+
+│   │   ├── Competition/Event → Named international and league tournaments like FIH Hockey World Cup, FIH Pro League.
+
+│   │   │   ├── Season/Year → The year or season in which the event occurs (e.g., 2023).
+
+│   │   │   ├── Venue → Locations hosting matches, such as Kalinga Stadium (Bhubaneswar), The Wagener Stadium (Amsterdam).
+
+│   │   │   ├── Stage/Match/Round → Stages within the event, e.g., Quarterfinals, Semifinals, Final.
+
+│   │   │   ├── Team/Club → Participating teams or national squads, such as India, Netherlands, Germany, Australia.
+
+│   │   │   │   ├── Athlete → Players competing in the teams, e.g., Manpreet Singh, Eva de Goede, Alexander Hendrickx.
+
+│   │   │   │   │   ├── Role/Position → Player positions and roles, such as Forward, Midfielder, Defender, Goalkeeper.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Hockey gear used by athletes, including stick models like Adidas Stiff, Grays GX1000.
+
+│   │   │   │   ├── Management → Team leadership roles such as Team Manager, Head Coach, Assistant Coach.
+
+│   │   │   │   ├── Sponsors → Brands supporting teams, e.g., OBO, Asics, Vantage.
+
+│   │   │   ├── Referee → Match officials overseeing fair play, including FIH Umpires, International Umpires.
+
+│   │   │   ├── Ranking/Standings → Team rankings and tournament results, such as World Rankings and Tournament Standings.
+
+
+
+
+
+
+
+

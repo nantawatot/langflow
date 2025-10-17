@@ -9,11 +9,6 @@ from langgraph.types import Command
 
 from langflow.logging import logger
 from langflow.omniscien_backend.deep_research.configuration import Configuration
-from langflow.omniscien_backend.deep_research.prompts import (
-    compress_research_simple_human_message,
-    compress_research_system_prompt,
-    research_system_prompt,
-)
 from langflow.omniscien_backend.deep_research.state import ResearcherOutputState, ResearcherState
 from langflow.omniscien_backend.deep_research.utils import (
     execute_tool_safely,
@@ -52,7 +47,9 @@ async def researcher(state: ResearcherState, config: RunnableConfig) -> Command[
     tool_available = "\n\n".join([f"- **{tool.name}**: {tool.description}" for tool in tools])
 
     # Step 2: Configure the researcher model with tools
-    researcher_prompt = research_system_prompt.format(date=get_today_str(), tool_available_options=tool_available)
+    researcher_prompt = configurable.research_system_prompt.format(
+        date=get_today_str(), tool_available_options=tool_available
+    )
 
     # Configure model with tools, retry logic, and settings
     research_model = (
@@ -146,6 +143,7 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
 
     Args:
         state: Current researcher state with accumulated research messages
+        config: Runtime configuration with model settings
 
     Returns:
         Dictionary containing compressed research summary and raw notes
@@ -158,7 +156,7 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
     researcher_messages = state.get("researcher_messages", [])
 
     # Add instruction to switch from research mode to compression mode
-    researcher_messages.append(HumanMessage(content=compress_research_simple_human_message))
+    researcher_messages.append(HumanMessage(content=configurable.compress_research_human_message))
 
     # Step 3: Attempt compression with retry logic for token limit issues
     synthesis_attempts = 0
@@ -167,7 +165,7 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
     while synthesis_attempts < max_attempts:
         try:
             # Create system prompt focused on compression task
-            compression_prompt = compress_research_system_prompt.format(date=get_today_str())
+            compression_prompt = configurable.compress_research_system_prompt.format(date=get_today_str())
 
             # Filter and convert messages to remove tool calls and tool messages
             # since compression model doesn't use tools

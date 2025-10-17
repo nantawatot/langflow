@@ -1,0 +1,96 @@
+{
+    "level 1": {
+        "category": "Basketball Sports",
+        "description": "players attempt to shoot the ball through the hoop on the opponent\u2019s court, moving the ball by throwing and dribbling."
+    },
+    "level 2": {
+        "category": "Basketball",
+        "description": "players attempt to shoot the ball through the hoop on the opponent\u2019s court, moving the ball by throwing and dribbling.",
+        "reference_website": "https://www.topendsports.com/sport/list/basketball.htm"
+    }
+}
+
+
+
+Basketball → Sport Category
+
+NBA → Most popular professional basketball league in the USA
+
+NCAA → College-level basketball competition in the USA
+
+Discipline Type → Competition formats, e.g., Regular Season, Playoffs, All-Star Game
+
+Competition/Event → Tournament names, e.g., NBA Finals, March Madness, FIBA World Cup
+
+Season/Year → Year of the event, e.g., 2023
+
+Round/Match/Quarter → Competition stages, e.g., Quarter Finals, Semi-finals, Final
+
+Team/Club → Participating teams, e.g., Los Angeles Lakers, Boston Celtics, Golden State Warriors
+
+Athlete → Player names, e.g., LeBron James, Michael Jordan, Stephen Curry
+
+Role/Position → Player roles, e.g., Point Guard, Shooting Guard, Small Forward, Power Forward, Center
+
+Equipment/Brand/Model → Player gear, e.g., Nike Air Zoom Freak shoes, Wilson Evolution basketball
+
+Management → Team officials, e.g., Head Coach, Assistant Coach, General Manager
+
+Sponsors → Team sponsors, e.g., Nike, Adidas, Coca-Cola
+
+Referee → Match officials, e.g., Earl Strom, Joey Crawford
+
+Venue → Competition locations, e.g., Staples Center, Madison Square Garden, TD Garden
+
+League → Related leagues, e.g., NBA, EuroLeague, WNBA
+
+Ranking → Team rankings, e.g., NBA Power Rankings, FIBA World Rankings
+
+Award → Honors received, e.g., MVP (Most Valuable Player), Rookie of the Year
+
+Fanbase → Supporter groups, e.g., "Lakers Nation," "Celtics Pride"
+
+Broadcasting → Media outlets broadcasting games, e.g., ESPN, TNT, ABC Sports
+
+
+
+Basketball Sports → Sport Category
+A team sport where two teams compete to score points by shooting a ball through the opponent's hoop. It is played professionally and at amateur levels worldwide with various leagues and tournaments.
+├── Basketball → The specific basketball sport format focused on here.
+│   ├── League → Organized basketball competitions and leagues, such as NBA (National Basketball Association) and NCAA (college basketball).
+│   │   ├── Discipline Type → Formats or phases within the league:
+│   │       • Regular Season – The standard league competition where teams play scheduled games.
+│   │       • Playoffs – Post-season elimination rounds to determine the champion.
+│   │       • All-Star Game – Exhibition game featuring the league’s top players.
+│   │   │   ├── Competition/Event → Named basketball events or championships, e.g., NBA Finals, March Madness (NCAA Tournament), FIBA World Cup.
+│   │   │   │   ├── Season/Year → The year or season the event takes place (e.g., 2023).
+│   │   │   │   ├── Venue → Locations where games are played, such as Staples Center, Madison Square Garden, TD Garden.
+│   │   │   │   ├── Round/Match/Quarter → Stages within competitions or individual game segments:
+│   │       • Quarter Finals, Semi-finals, Final.
+│   │   │   │   ├── Team/Club → Basketball teams participating in the event (e.g., Los Angeles Lakers, Boston Celtics, Golden State Warriors).
+│   │   │   │   │   ├── Athlete → Players on the team, such as LeBron James, Michael Jordan, Stephen Curry.
+│   │   │   │   │   │   ├── Role/Position → Player positions and responsibilities:
+│   │           • Point Guard, Shooting Guard, Small Forward, Power Forward, Center.
+│   │   │   │   │   │   ├── Equipment/Brand/Model → Gear used by players, e.g., Nike Air Zoom Freak shoes, Wilson Evolution basketball.
+│   │   │   │   │   ├── Management → Team staff such as Head Coach, Assistant Coach, General Manager.
+│   │   │   │   │   ├── Sponsors → Companies sponsoring teams or players (e.g., Nike, Adidas, Coca-Cola).
+│   │   │   │   │   ├── Ranking → Team or player rankings, such as NBA Power Rankings, FIBA World Rankings.
+│   │   │   │   │   ├── Fanbase → Fan groups or supporter communities, e.g., “Lakers Nation,” “Celtics Pride.”
+│   │   │   │   ├── Referee → Officials responsible for enforcing rules during games, e.g., Earl Strom, Joey Crawford.
+│   │   │   │   ├── Award → Honors and recognitions like MVP (Most Valuable Player), Rookie of the Year.
+│   │   │   │   ├── Broadcasting → Media outlets airing the games, such as ESPN, TNT, ABC Sports.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

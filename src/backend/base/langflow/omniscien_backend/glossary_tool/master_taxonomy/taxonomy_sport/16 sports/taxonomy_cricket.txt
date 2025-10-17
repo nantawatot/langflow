@@ -1,0 +1,88 @@
+{
+    "level 1": {
+        "category": "Cricket Sports",
+        "description": "a team sport played on a rectangular pitch in the center of a large grass oval, two batters protect their wicket while the fielding team attempt to get them out. Forms include Test, One-Day and T20."
+    },
+    "level 2": {
+        "category": "Test Cricket",
+        "description": "the longest form of cricket, played over 5 days.",
+        "reference_website": "https://www.topendsports.com/sport/list/cricket-test.htm"
+    }
+}
+
+
+
+Cricket → Sport Category
+
+Test Cricket → Focused subcategory of the test match format
+
+Discipline Type → Competition formats, e.g., Test Match, One Day International (ODI), Twenty20 (T20)
+
+Competition/Event → Tournament names, e.g., ICC World Cup, Ashes Series, IPL (Indian Premier League)
+
+Season/Year → Year the event occurs, e.g., 2023, 2024
+
+Stage/Match/Round → Competition phases, e.g., Semi-final, Final, Group Stage
+
+Team/Club → Participating teams, e.g., India, Australia, England, Mumbai Indians
+
+Athlete → Player names, e.g., Virat Kohli, Steve Smith, Ben Stokes, Sachin Tendulkar
+
+Role/Position → Player roles, e.g., Batsman, Bowler, All-rounder, Wicketkeeper
+
+Equipment/Brand/Model → Player gear, e.g., Gray-Nicolls Bat, Kookaburra Ball, Adidas Cricket Shoes
+
+Management → Team officials, e.g., Coach, Captain, Team Manager, Batting Coach
+
+Sponsors → Team sponsors, e.g., Nike, Puma, Paytm, Vivo, Audi
+
+Title/Championship → Championship titles, e.g., ICC Champions Trophy, IPL Title
+
+Venue/Location → Event locations, e.g., Lord’s Cricket Ground, MCG (Melbourne Cricket Ground), Eden Gardens
+
+Match Result → Outcomes, e.g., Win, Loss, Draw, No Result, Tie
+
+Cricket Rules → Key rules, e.g., LBW (Leg Before Wicket), Boundary, Over, Duckworth-Lewis Method
+
+Umpire/Referee → Officials, e.g., On-field Umpire, Third Umpire, Match Referee
+
+
+
+
+Cricket Sports → Sport Category
+A bat-and-ball team sport played internationally, featuring formats that range from multi-day matches to fast-paced limited overs games. It is popular globally, especially in countries like India, England, Australia, and others.
+├── Test Cricket → The traditional and longest form of cricket, played over multiple days, focusing on endurance and strategy.
+
+│   ├── Discipline Type → Different formats of cricket competitions, including:
+│   │       • Test Match – The classic format played over five days.
+│   │       • One Day International (ODI) – Limited overs matches, typically 50 overs per side.
+│   │       • Twenty20 (T20) – Fast-paced matches with 20 overs per side.
+
+│   │   ├── Competition/Event → Named cricket tournaments or series such as ICC World Cup, Ashes Series, Indian Premier League (IPL).
+
+│   │   │   ├── Season/Year → The calendar year or season when the event takes place (e.g., 2023, 2024).
+
+│   │   │   ├── Venue/Location → Grounds or stadiums hosting matches, such as Lord’s Cricket Ground, Melbourne Cricket Ground (MCG), Eden Gardens.
+
+│   │   │   ├── Team/Club → National or franchise teams participating, e.g., India, Australia, England, Mumbai Indians.
+
+│   │   │   │   ├── Athlete → Cricket players competing in the events, such as Virat Kohli, Steve Smith, Ben Stokes, Sachin Tendulkar.
+
+│   │   │   │   │   ├── Role/Position → Player roles and specialties within the team:
+│   │       • Batsman, Bowler, All-rounder, Wicketkeeper.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Gear used by players, such as Gray-Nicolls bats, Kookaburra balls, Adidas cricket shoes.
+
+│   │   │   │   ├── Management → Team leadership including Coach, Captain, Team Manager, Batting Coach.
+
+│   │   │   │   ├── Sponsors → Companies supporting teams or players, e.g., Nike, Puma, Paytm, Vivo, Audi.
+
+│   │   │   ├── Title/Championship → Official titles or trophies contested, such as ICC Champions Trophy, IPL Title.
+
+│   │   │   ├── Umpire/Referee → Officials responsible for match adjudication, including On-field Umpires, Third Umpire, Match Referee.
+
+
+
+
+
+

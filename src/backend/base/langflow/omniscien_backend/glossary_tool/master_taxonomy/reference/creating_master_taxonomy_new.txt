@@ -1,0 +1,205 @@
+{
+  "top sport category": {
+    "attributes": ["category", "description"],
+    "examples": ["Cycling Sports", "sports involving bicycles."]
+  },
+  "sub sport category": {
+    "attributes": ["category", "description", "reference_website"],
+    "examples": ["Road Cycling", "cycle races held on paved roads, usually over several hours or days.", ""https://www.topendsports.com/sport/list/cycling-road.htm"]
+  },
+  "discipline type": {
+    "attributes": ["DisciplineName", "RaceFormat", "Distance", "TerrainType", "TimingMethod"],
+    "examples": ["Stage Race", "Time Trial", "Individual Pursuit"]
+  },
+  "competition type": {
+    "attributes": ["CompetitionFormat", "RankingSystem", "PrizeMoney", "QualificationCriteria"],
+    "examples": ["Grand Slam", "World Cup", "Tour"]
+  },
+  "competition/event": {
+    "attributes": ["EventName", "Location", "Date", "EventType", "OrganizingCommittee"],
+    "examples": ["Tour de France", "FIFA World Cup", "Monaco Grand Prix"]
+  },
+  "organization/authority": {
+    "attributes": ["Name", "GoverningBody", "FoundationYear", "HeadquartersLocation", "MissionStatement"],
+    "examples": ["FIFA", "IOC", "UCI"]
+  },
+  "season/edition": {
+    "attributes": ["SeasonYear", "EditionNumber", "StartDate", "EndDate"],
+    "examples": ["2022", "148th Edition", "Summer 2023"]
+  },
+  "division/category/round": {
+    "attributes": ["DivisionName", "AgeGroup", "GenderCategory", "SkillLevel"],
+    "examples": ["Men's/Women's bracket", "U-20/U-17", "Open category"]
+  },
+  "stage/match/round": {
+    "attributes": ["StageName", "MatchFormat", "TimeOfEvent", "Location"],
+    "examples": ["Group Stage", "Semi-Final", "Round 4"]
+  },
+  "venue": {
+    "attributes": ["VenueName", "Location", "Capacity", "SurfaceType", "EventHistory"],
+    "examples": ["Lusail Stadium", "Circuit de Monaco", "Wimbledon Court"]
+  },
+  "team/player group": {
+    "attributes": ["TeamName", "CountryOfOrigin", "ClubAffiliation", "KeyPlayers"],
+    "examples": ["Brazil", "Red Bull Racing", "Barcelona"]
+  },
+  "athlete/driver/player": {
+    "attributes": ["Name", "Nationality", "Discipline", "Ranking", "Achievements"],
+    "examples": ["Lionel Messi", "Max Verstappen", "Roger Federer"]
+  },
+  "role/position": {
+    "attributes": ["RoleName", "PrimaryResponsibility", "TacticalImpact", "PhysicalDemands"],
+    "examples": ["Goalkeeper", "Driver", "Fly-Half", "Striker"]
+  },
+  "equipment/vehicle": {
+    "attributes": ["EquipmentName", "Brand", "Model", "Material", "SpecialFeatures"],
+    "examples": ["Bianchi Bike", "RB19", "Cervelo P5"]
+  },
+  "management": {
+    "attributes": ["Role", "Name", "TeamAffiliation", "Experience", "LeadershipStyle"],
+    "examples": ["Head Coach", "Team Principal", "Manager"]
+  },
+  "sponsors": {
+    "attributes": ["CompanyName", "SponsorshipType", "BrandLogo", "SponsorshipDuration"],
+    "examples": ["Nike", "Petronas", "Adidas"]
+  }
+}
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Top Sport Category → ประเภทกีฬา เช่น Ball Sports, Combat Sports, Motor Sports, Endurance Sports
+
+├── Sub Sport Category → ประเภทกีฬาย่อยที่เรากำลังเน้น เช่น Road Cycling, Association Football
+
+│   ├── Discipline Type → รูปแบบการแข่งขัน เช่น Stage Race, Stroke Play
+
+│   │   ├── Competition/League Type → รูปแบบทัวร์นาเมนต์ เช่น Grand Slam, World Cup, Tour
+
+│   │   │   ├── Competition/Event → ชื่อรายการแข่ง เช่น Tour de France
+
+│   │   │   │   ├── Organization/Authority → หน่วยงานกำกับดูแล เช่น FIFA, IOC, UCI
+
+│   │   │   │   ├── Season/Edition → ปีหรือครั้งที่จัดงาน เช่น 2022, 2023, 148th Edition
+
+│   │   │   │   ├── Tournament Format → รูปแบบการแข่งขัน เช่น Round-robin, Knockout Stage, Double-elimination
+
+│   │   │   │   ├── Court Surface → พื้นสนาม เช่น Grass, Clay, Hard Court
+
+│   │   │   │   ├── Division/Category/Bracket → การแบ่งประเภท เช่น Men's/Women's bracket, U-20/U-17
+
+│   │   │   │   │   ├── Stage/Match/Round → รอบของการแข่งขัน เช่น Group Stage, Stage 1, Round 4
+
+│   │   │   │   │   │   ├── Venue → สถานที่จัดการแข่งขัน เช่น Lusail Stadium, Circuit de Monaco
+
+│   │   │   │   │   ├── Team/Player Group → ชื่อทีม นักกีฬา หรือหน่วยรวม เช่น Brazil, Red Bull Racing
+
+│   │   │   │   │   │   ├── Athlete/Driver/Player → ชื่อบุคคลนักกีฬา เช่น Lionel Messi, Max Verstappen
+
+│   │   │   │   │   │   │   ├── Role/Position → ตำแหน่งในทีม/กีฬา เช่น Goalkeeper, Driver
+
+│   │   │   │   │   │   │   ├── Equipment/Vehicle → อุปกรณ์/ยานพาหนะในการแข่งขัน เช่น Bianchi Bike, RB19
+
+│   │   │   │   │   │   │   ├── Athlete Ranking → การจัดอันดับนักกีฬา เช่น BWF World Ranking
+
+│   │   │   │   │   │   │   ├── Time/Record → เวลาหรือสถิติที่นักกีฬาทำได้ เช่น World Record, Personal Best
+
+│   │   │   │   │   │   │   ├── Title/Championship → ชื่อแชมป์หรือรางวัล เช่น PBA World Championship, World Cup of Bowling
+
+│   │   │   │   │   │   ├── Management → ผู้บริหาร/ผู้จัดการ/โค้ช เช่น Head Coach, Team Principal
+
+│   │   │   │   │   │   ├── Sponsors → ผู้สนับสนุนทางการเงิน เช่น Nike, Petronas
+
+│   │   │   │   │   │   ├── Team Ranking → การจัดอันดับทีม เช่น MLB Power Rankings, Wild Card Standings
+
+│   │   │   │   │   │   ├── Fanbase → กลุ่มแฟนคลับของทีม เช่น "Yankees Nation," "Red Sox Nation"
+
+│   │   │   │   │   ├── Horse/Runner → ชื่อม้าหรือผู้แข่งขัน เช่น Secretariat, Red Rum
+
+│   │   │   │   │   │   ├── Jockey → นักขี่ม้า เช่น Frankie Dettori
+
+│   │   │   │   │   │   ├── Trainer → ผู้ฝึกม้า เช่น Bob Baffert
+
+│   │   │   │   │   │   ├── Owner → เจ้าของม้า เช่น Coolmore Stud
+
+│   │   │   │   │   │   ├── Team/Stable → คอกหรือทีมฝึก เช่น Godolphin
+
+│   │   │   │   │   │   ├── Betting Odds → อัตราต่อรอง เช่น 5/1, 10/1
+
+│   │   │   │   │   │   ├── Time/Speed → สถิติเวลาหรือความเร็ว เช่น 2:00:34, 35 mph
+
+│   │   │   │   │   ├── Referee → ผู้ตัดสินการแข่งขัน เช่น Earl Strom, Joey Crawford
+
+│   │   │   │   │   ├── Prize Money/Rewards → รางวัลหรือเงินรางวัลที่ได้รับ เช่น $50,000, Gold Medal
+
+│   │   │   │   │   ├── Broadcast → สถานีที่ถ่ายทอดสดการแข่งขัน เช่น ESPN, Fox Sports, MLB Network
+
+
+
+
+Top Sport Category → Sport categories, such as Ball Sports, Combat Sports, Motor Sports, Endurance Sports
+
+├── Sub Sport Category → Specific sub-categories, such as Road Cycling, Association Football
+
+│   ├── Discipline Type → Type of competition, such as Stage Race, Stroke Play
+
+│   │   ├── Competition/League Type → Type of tournament, such as Grand Slam, World Cup, Tour
+
+│   │   │   ├── Competition/Event → Name of the event, such as Tour de France
+
+│   │   │   │   ├── Organization/Authority → Governing body or authority, such as FIFA, IOC, UCI
+
+│   │   │   │   ├── Season/Edition → Year or edition of the event, such as 2022, 2023, 148th Edition
+
+│   │   │   │   ├── Tournament Format → Competition format, such as Round-robin, Knockout Stage, Double-elimination
+
+│   │   │   │   ├── Court Surface → Playing surface, such as Grass, Clay, Hard Court
+
+│   │   │   │   ├── Division/Category/Bracket → Categories or divisions, such as Men's/Women's bracket, U-20/U-17
+
+│   │   │   │   │   ├── Stage/Match/Round → Stage or round of the competition, such as Group Stage, Stage 1, Round 4
+
+│   │   │   │   │   │   ├── Venue → Location of the event, such as Lusail Stadium, Circuit de Monaco
+
+│   │   │   │   │   ├── Team/Player Group → Name of the team, athletes, or groups, such as Brazil, Red Bull Racing
+
+│   │   │   │   │   │   ├── Athlete/Driver/Player → Name of the individual athletes or drivers, such as Lionel Messi, Max Verstappen
+
+│   │   │   │   │   │   │   ├── Role/Position → Role or position within the team or sport, such as Goalkeeper, Driver
+
+│   │   │   │   │   │   │   ├── Equipment/Vehicle → Equipment or vehicle used in the competition, such as Bianchi Bike, RB19
+
+│   │   │   │   │   │   │   ├── Athlete Ranking → Athlete rankings, such as BWF World Ranking
+
+│   │   │   │   │   │   │   ├── Time/Record → Performance times or records, such as World Record, Personal Best
+
+│   │   │   │   │   │   │   ├── Title/Championship → Titles or awards, such as PBA World Championship, World Cup of Bowling
+
+│   │   │   │   │   │   ├── Management → Managers, coaches, or team personnel, such as Head Coach, Team Principal
+
+│   │   │   │   │   │   ├── Sponsors → Financial sponsors, such as Nike, Petronas
+
+│   │   │   │   │   │   ├── Team Ranking → Team rankings, such as MLB Power Rankings, Wild Card Standings
+
+│   │   │   │   │   │   ├── Fanbase → Fan groups, such as "Yankees Nation," "Red Sox Nation"
+
+│   │   │   │   │   ├── Horse/Runner → Horse or competitor names, such as Secretariat, Red Rum
+
+│   │   │   │   │   │   ├── Jockey → Jockey names, such as Frankie Dettori
+
+│   │   │   │   │   │   ├── Trainer → Trainers, such as Bob Baffert
+
+│   │   │   │   │   │   ├── Owner → Owners, such as Coolmore Stud
+
+│   │   │   │   │   │   ├── Team/Stable → Stables or training teams, such as Godolphin
+
+│   │   │   │   │   │   ├── Betting Odds → Betting odds, such as 5/1, 10/1
+
+│   │   │   │   │   │   ├── Time/Speed → Time or speed records, such as 2:00:34, 35 mph
+
+│   │   │   │   │   ├── Referee → Referees, such as Earl Strom, Joey Crawford
+
+│   │   │   │   │   ├── Prize Money/Rewards → Prizes or prize money, such as $50,000, Gold Medal
+
+│   │   │   │   │   ├── Broadcast → Broadcast stations, such as ESPN, Fox Sports, MLB Network
+
+

@@ -1,0 +1,96 @@
+{
+    "level 1": {
+        "category": "Hockey Sports",
+        "description": "such as field hockey, ice hockey and roller hockey."
+    },
+    "level 2": {
+        "category": "Ice Hockey",
+        "description": "A fast-paced sport played on an ice rink with six players per team, aiming to score by shooting a puck into the opponent\u2019s goal.",
+        "reference_website": "https://www.topendsports.com/sport/list/hockey-ice.htm"
+    }
+}
+
+
+
+Ice Hockey → Sport Category
+
+Professional Ice Hockey → Focused subcategory on professional ice hockey competitions
+
+Discipline Type → Competition formats, e.g., Regular Season, Playoffs, All-Star Game, Exhibition Match
+
+Competition/Event → Tournament names, e.g., NHL Stanley Cup Playoffs, Winter Classic, IIHF World Championship
+
+Season/Year → Year the event occurs, e.g., 2023, 2024
+
+Stage/Match/Round → Competition stages, e.g., Round 1, Semi-final, Final
+
+Team/Club → Participating teams, e.g., Toronto Maple Leafs, Boston Bruins, Montreal Canadiens, New York Rangers
+
+Athlete → Player names, e.g., Sidney Crosby, Alexander Ovechkin, Connor McDavid, Patrick Kane
+
+Role/Position → Player roles, e.g., Forward, Defenseman, Goaltender, Captain, Alternate Captain
+
+Equipment/Brand/Model → Player gear, e.g., CCM Hockey Stick, Bauer Skates, Warrior Gloves
+
+Management → Team officials, e.g., Head Coach, General Manager, Assistant Coach
+
+Sponsors → Team sponsors, e.g., Adidas, Coca-Cola, Pepsi, Honda, KIA
+
+Arena/Venue → Event locations, e.g., Madison Square Garden, Rogers Arena, Bell Centre, TD Garden
+
+League → Leagues, e.g., NHL (National Hockey League), KHL (Kontinental Hockey League), SHL (Swedish Hockey League)
+
+Referee/Official → Match officials, e.g., Head Referee, Linesman, Officiating Crew
+
+Player Stats → Player performance metrics, e.g., Goals, Assists, Points, Shots on Goal, Plus-Minus, Save Percentage
+
+
+
+
+Hockey Sports → Sport Category
+Hockey sports involve fast-paced team competitions played on ice or field. Ice hockey is a major discipline featuring intense physicality and strategic play on ice rinks, popular in North America and Europe.
+├── Ice Hockey → The specific hockey discipline focused on here, played on ice with skates, sticks, and a puck.
+
+│   ├── Discipline Type → Different formats of competition such as:
+│       • Regular Season – Standard league games determining playoff qualification.
+│       • Playoffs – Elimination rounds culminating in a championship.
+│       • All-Star Game – Exhibition featuring top players.
+│       • Exhibition Match – Friendly or preseason games.
+
+│   │   ├── Competition/Event → Notable events like NHL Stanley Cup Playoffs, Winter Classic, IIHF World Championship.
+
+│   │   │   ├── League → Leagues organizing competitions such as NHL (National Hockey League), KHL (Kontinental Hockey League), SHL (Swedish Hockey League).
+
+│   │   │   ├── Season/Year → The year or season of the competition, e.g., 2023, 2024.
+
+│   │   │   ├── Arena/Venue → Locations where matches are held, e.g., Madison Square Garden, Rogers Arena, Bell Centre, TD Garden.
+
+│   │   │   ├── Stage/Match/Round → Competitive stages like Round 1, Semi-final, Final.
+
+│   │   │   ├── Team/Club → Participating teams such as Toronto Maple Leafs, Boston Bruins, Montreal Canadiens, New York Rangers.
+
+│   │   │   │   ├── Athlete → Player names like Sidney Crosby, Alexander Ovechkin, Connor McDavid, Patrick Kane.
+
+│   │   │   │   │   ├── Role/Position → Player roles including Forward, Defenseman, Goaltender, Captain, Alternate Captain.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Gear used by players, e.g., CCM Hockey Stick, Bauer Skates, Warrior Gloves.
+
+│   │   │   │   │   ├── Player Stats → Key performance stats such as Goals, Assists, Points, Shots on Goal, Plus-Minus, Save Percentage.
+
+│   │   │   │   ├── Management → Team staff roles like Head Coach, General Manager, Assistant Coach.
+
+│   │   │   │   ├── Sponsors → Teams’ sponsors including Adidas, Coca-Cola, Pepsi, Honda, KIA.
+
+│   │   │   ├── Referee/Official → Match officials such as Head Referee, Linesman, Officiating Crew.
+
+
+
+
+
+
+
+
+
+
+
+

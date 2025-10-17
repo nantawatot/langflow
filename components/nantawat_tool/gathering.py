@@ -12,6 +12,7 @@ from fastapi import UploadFile
 from fastapi.encoders import jsonable_encoder
 from langchain.tools import StructuredTool
 from langchain_community.document_loaders import RecursiveUrlLoader
+from langchain_community.document_transformers import MarkdownifyTransformer
 from lfx.base.langchain_utilities.model import LCToolComponent
 from lfx.field_typing import Tool
 from lfx.field_typing.range_spec import RangeSpec
@@ -22,25 +23,25 @@ from lfx.io import (
     DropdownInput,
     IntInput,
     MessageTextInput,
+    MultilineInput,
     Output,
     SecretStrInput,
     SliderInput,
     StrInput,
     TableInput,
-    MultilineInput
 )
-from lfx.log.logger import logger
-from lfx.schema.data import Data  # , DataFrame, Message
+from lfx.schema.data import Data
 from lfx.schema.dataframe import DataFrame
 from lfx.schema.message import Message
 from lfx.services.deps import get_settings_service, get_storage_service, session_scope
 from lfx.utils.request_utils import get_user_agent
+from loguru import logger
 from pydantic import BaseModel, Field
 
 # Constants
 DEFAULT_TIMEOUT = 30
 DEFAULT_MAX_DEPTH = 1
-DEFAULT_FORMAT = "Text"
+DEFAULT_FORMAT = "HTML"
 
 
 URL_REGEX = re.compile(
@@ -223,22 +224,19 @@ class GatheringComponent(LCToolComponent):
             real_time_refresh=True,
             limit=1,
         ),
-        # Common inputs
-        # HandleInput(
-        #     name="input",
-        #     display_name="File Content",
-        #     info="The input to save.",
-        #     dynamic=True,
-        #     input_types=["Data", "DataFrame", "Message"],
-        #     required=True,
-        # ),
+        BoolInput(
+            name="md_converse",
+            display_name="MD Converse",
+            info="If enabled, convert HTML to Markdown format.",
+            value=False,
+            advanced=True,
+        ),
         MultilineInput(
             name="directory_name",
             display_name="Directory Name",
             info="Base Directory.",
             required=True,
             show=False,
-            # tool_mode=True,
         ),
         MultilineInput(
             name="file_name",
@@ -440,6 +438,11 @@ class GatheringComponent(LCToolComponent):
                     if not docs:
                         logger.warning(f"No documents found for {url}")
                         continue
+
+                    if self.md_converse:
+                        md = MarkdownifyTransformer()
+                        docs = md.transform_documents(docs)
+                        logger.debug(f"Converted documents to Markdown format for {url}")
 
                     logger.debug(f"Found {len(docs)} documents from {url}")
                     all_docs.extend(docs)
@@ -719,6 +722,9 @@ class GatheringComponent(LCToolComponent):
             msg = f"Invalid file format '{file_format}' for {self._get_input_type(input_data)}. Allowed: {allowed_formats}"
             raise ValueError(msg)
 
+        if not self.directory_name:
+            raise ValueError("Directory name must be provided for local storage.")
+
         # Prepare file path
         self.directory_name = (
             self.directory_name.rstrip("/") if self.directory_name.endswith("/") else self.directory_name
@@ -778,7 +784,7 @@ class GatheringComponent(LCToolComponent):
         s3_client = boto3.client("s3", **client_config)
 
         # Extract content
-        content = self._extract_content_for_upload()
+        content = self._extract_content_for_upload(input_data)
         file_format = self._get_file_format_for_location("AWS", input_data)
 
         # Generate file path

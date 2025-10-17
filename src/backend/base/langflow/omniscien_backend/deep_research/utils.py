@@ -1,192 +1,22 @@
 """Utility functions and helpers for the Deep Research agent."""
 
-import asyncio
-import logging
 from datetime import datetime
-from typing import Annotated, Literal
 
 import pandas as pd
-from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import (
     AIMessage,
-    HumanMessage,
     MessageLikeRepresentation,
     ToolMessage,
     filter_messages,
 )
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import (
-    InjectedToolArg,
     tool,
 )
 
 # from tavily import AsyncTavilyClient
 from langflow.omniscien_backend.deep_research.configuration import Configuration
-from langflow.omniscien_backend.deep_research.prompts import summarize_webpage_prompt
-from langflow.omniscien_backend.deep_research.state import ResearchComplete, Summary
-
-##########################
-# Tavily Search Tool Utils
-##########################
-TAVILY_SEARCH_DESCRIPTION = (
-    "A search engine optimized for comprehensive, accurate, and trusted results. "
-    "Useful for when you need to answer questions about current events."
-)
-
-
-@tool(description=TAVILY_SEARCH_DESCRIPTION)
-async def tavily_search(
-    queries: list[str],
-    max_results: Annotated[int, InjectedToolArg] = 5,
-    topic: Annotated[Literal["general", "news", "finance"], InjectedToolArg] = "general",
-    config: RunnableConfig = None,
-) -> str:
-    """Fetch and summarize search results from Tavily search API.
-
-    Args:
-        queries: List of search queries to execute
-        max_results: Maximum number of results to return per query
-        topic: Topic filter for search results (general, news, or finance)
-        config: Runtime configuration for API keys and model settings
-
-    Returns:
-        Formatted string containing summarized search results
-    """
-    # Step 1: Execute search queries asynchronously
-    search_results = await tavily_search_async(
-        queries,
-        max_results=max_results,
-        topic=topic,
-        include_raw_content=True,
-    )
-
-    # Step 2: Deduplicate results by URL to avoid processing the same content multiple times
-    unique_results = {}
-    for response in search_results:
-        for result in response["results"]:
-            url = result["url"]
-            if url not in unique_results:
-                unique_results[url] = {**result, "query": response["query"]}
-
-    # Step 3: Set up the summarization model with configuration
-    configurable = Configuration.from_runnable_config(config)
-
-    # Character limit to stay within model token limits (configurable)
-    max_char_to_include = configurable.max_content_length
-
-    # Initialize summarization model with retry logic
-    summarization_model = (
-        configurable.get_model()
-        .with_structured_output(Summary)
-        .with_retry(stop_after_attempt=configurable.max_structured_output_retries)
-    )
-
-    # Step 4: Create summarization tasks (skip empty content)
-    async def noop():
-        """No-op function for results without raw content."""
-        return
-
-    summarization_tasks = [
-        (
-            noop()
-            if not result.get("raw_content")
-            else summarize_webpage(summarization_model, result["raw_content"][:max_char_to_include])
-        )
-        for result in unique_results.values()
-    ]
-
-    # Step 5: Execute all summarization tasks in parallel
-    summaries = await asyncio.gather(*summarization_tasks)
-
-    # Step 6: Combine results with their summaries
-    summarized_results = {
-        url: {"title": result["title"], "content": result["content"] if summary is None else summary}
-        for url, result, summary in zip(unique_results.keys(), unique_results.values(), summaries, strict=False)
-    }
-
-    # Step 7: Format the final output
-    if not summarized_results:
-        return "No valid search results found. Please try different search queries or use a different search API."
-
-    formatted_output = "Search results: \n\n"
-    for i, (url, result) in enumerate(summarized_results.items()):
-        formatted_output += f"\n\n--- SOURCE {i + 1}: {result['title']} ---\n"
-        formatted_output += f"URL: {url}\n\n"
-        formatted_output += f"SUMMARY:\n{result['content']}\n\n"
-        formatted_output += "\n\n" + "-" * 80 + "\n"
-
-    return formatted_output
-
-
-async def tavily_search_async(
-    search_queries,
-    max_results: int = 5,
-    topic: Literal["general", "news", "finance"] = "general",
-    include_raw_content: bool = True,
-):
-    """Execute multiple Tavily search queries asynchronously.
-
-    Args:
-        search_queries: List of search query strings to execute
-        max_results: Maximum number of results per query
-        topic: Topic category for filtering results
-        include_raw_content: Whether to include full webpage content
-    Returns:
-        List of search result dictionaries from Tavily API
-    """
-    # Initialize the Tavily client with API key from config
-    # TODO: Handle missing API key gracefully
-    tavily_client = AsyncTavilyClient(api_key="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")
-
-    # Create search tasks for parallel execution
-    search_tasks = [
-        tavily_client.search(query, max_results=max_results, include_raw_content=include_raw_content, topic=topic)
-        for query in search_queries
-    ]
-
-    # Execute all search queries in parallel and return results
-    search_results = await asyncio.gather(*search_tasks)
-    return search_results
-
-
-async def summarize_webpage(model: BaseChatModel, webpage_content: str) -> str:
-    """Digest webpage content using an AI model with timeout protection.
-
-    Args:
-        model: The chat model configured for creating a digest.
-        webpage_content: Raw webpage content to be digested.
-
-    Returns:
-        Formatted digest with key quotes and data, or original content if digestion fails.
-    """
-    try:
-        # Create prompt with current date context
-        prompt_content = summarize_webpage_prompt.format(webpage_content=webpage_content, date=get_today_str())
-
-        # Execute digestion with timeout to prevent hanging
-        digest = await asyncio.wait_for(
-            model.ainvoke([HumanMessage(content=prompt_content)]),
-            timeout=60.0,  # 60 second timeout for digestion
-        )
-
-        # Format the digest with structured sections
-        key_quotes_str = "\n".join(f"- {q}" for q in digest.key_quotes_and_data)
-        formatted_digest = (
-            f"<detailed_digest>\n{digest.detailed_digest}\n</detailed_digest>\n\n"
-            f"<key_quotes_and_data>\n{key_quotes_str}\n</key_quotes_and_data>"
-        )
-
-        return formatted_digest
-
-    except asyncio.TimeoutError:
-        # Timeout during digestion - return original content
-        logging.warning("Digestion timed out after 60 seconds, returning original content")
-        return webpage_content
-    except Exception as e:
-        # Other errors during digestion - log and return original content
-        logging.warning(f"Digestion failed with error: {e!s}, returning original content")
-        return webpage_content
-
+from langflow.omniscien_backend.deep_research.state import ResearchComplete
 
 ##########################
 # Reflection Tool Utils
@@ -224,13 +54,6 @@ def think_tool(reflection: str) -> str:
 ##########################
 # Tool Utils
 ##########################
-
-
-async def get_search_tool():
-    # Configure Tavily search tool with metadata
-    search_tool = tavily_search
-    search_tool.metadata = {**(search_tool.metadata or {}), "type": "search", "name": "web_search"}
-    return [search_tool]
 
 
 async def get_all_tools(config: RunnableConfig = None) -> list[tool]:

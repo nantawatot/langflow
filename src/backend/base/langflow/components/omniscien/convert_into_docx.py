@@ -8,12 +8,12 @@ from langflow.io import Output
 from langflow.schema import Data, Message
 
 
-class ConvertIntoDocx(Component):
+class GetDocumentTemplate(Component):
     display_name = "Convert into Word Doc (.docx)"
     description = "Use this to decode a Base64 word document and transform into a .docx file "
     documentation: str = "https://docs.langflow.org/components-custom-components"
     icon = "Omniscien"
-    name = "CobvertIntoDocx"
+    name = "GetDocumentTemplate"
 
     inputs = [
         DataInput(

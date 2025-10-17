@@ -1,0 +1,98 @@
+{
+    "level 1": {
+        "category": "Bowling Sports",
+        "description": "there are many variations of bowling or throwing a ball to knock down pins or get close to a target, such as the popular 10-pin bowling and boules."
+    },
+    "level 2": {
+        "category": "Tenpin",
+        "description": "a player rolls a bowling ball along a wooden or synthetic lane to knock down pins.",
+        "reference_website": "https://www.topendsports.com/sport/list/bowling-tenpin.htm"
+    }
+}
+
+Bowling → Sport Category
+
+Ten-pin Bowling → Subcategory focused on the 10-pin bowling style
+
+Nine-pin Bowling → Subcategory focused on the 9-pin bowling style
+
+Discipline Type → Competition formats, e.g., Singles, Doubles, Team Event
+
+Competition/Event → Tournament names, e.g., PBA Tour, World Bowling Championship
+
+Season/Year → Year the event occurs, e.g., 2023
+
+Match/Round → Competition stages, e.g., Round 1, Quarterfinal, Final
+
+Team/Club → Participating teams, e.g., Team USA, Brunswick Pro Bowling
+
+Athlete → Player names, e.g., Jason Belmonte, Sean Rash, Mika Koivuniemi
+
+Role/Position → Player roles, e.g., Lead Bowler, Anchor, Spare Specialist
+
+Equipment/Brand/Model → Player gear, e.g., Bowling Ball, Shoes, Bag such as Storm IQ Tour, Dexter SST
+
+Management → Team officials, e.g., Coach, Manager, Team Director
+
+Sponsors → Team sponsors, e.g., Storm, Brunswick, Ebonite
+
+Referee → Match officials, e.g., John Smith, Mark Johnson
+
+Venue → Competition locations, e.g., ESPN Wide World of Sports, Thunderbowl Lanes
+
+Title/Championship → Championship or title names, e.g., PBA World Championship, World Cup of Bowling
+
+Broadcasting → Media outlets broadcasting events, e.g., ESPN, Fox Sports
+
+Association/Federation → Organizing bodies, e.g., PBA (Professional Bowlers Association), World Bowling Federation
+
+Tournament Format → Competition styles, e.g., Elimination, Round-robin, Knockout
+
+
+
+
+Bowling → Sport Category
+A target sport where players roll a ball down a lane aiming to knock down pins. It includes several variations, with Tenpin bowling being the most common and internationally recognized.
+├── Tenpin → The specific form of bowling focused on here, played with ten pins arranged in a triangular formation and a heavy ball rolled down a lane.
+
+│   ├── Discipline Type → Types of competition formats within Tenpin bowling:
+│   │       • Singles – Individual player competition.
+│   │       • Doubles – Teams of two players competing together.
+│   │       • Team Event – Groups of players competing as a team.
+
+│   │   ├── Competition/Event → Named bowling tournaments or tours, e.g., PBA Tour, World Bowling Championship.
+
+│   │   │   ├── Season/Year → The calendar year of the event (e.g., 2023).
+
+│   │   │   ├── Venue → Location or bowling center where the event takes place, such as ESPN Wide World of Sports, Thunderbowl Lanes.
+
+│   │   │   ├── Match/Round → Phases of the competition:
+│   │       • Round 1, Quarterfinal, Final.
+
+│   │   │   ├── Team/Club → Teams or organizations participating, e.g., Team USA, Brunswick Pro Bowling.
+
+│   │   │   │   ├── Athlete → Professional bowlers participating in the events, e.g., Jason Belmonte, Sean Rash, Mika Koivuniemi.
+
+│   │   │   │   │   ├── Role/Position → Player roles within a team, such as Lead Bowler, Anchor, Spare Specialist.
+
+│   │   │   │   │   ├── Title/Championship → Names of titles or awards held, e.g., PBA World Championship, World Cup of Bowling.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Bowling gear used by athletes, including bowling balls, shoes, bags (e.g., Storm IQ Tour, Dexter SST).
+
+│   │   │   │   ├── Management → Team officials such as Coach, Manager, Team Director.
+
+│   │   │   │   ├── Sponsors → Brands supporting teams or players, e.g., Storm, Brunswick, Ebonite.
+
+│   │   │   ├── Referee → Officials overseeing competition fairness, e.g., John Smith, Mark Johnson.
+
+│   │   │   ├── Broadcasting → Media channels airing the event, such as ESPN, Fox Sports.
+
+│   │   │   ├── Association/Federation → Governing bodies organizing competitions, e.g., Professional Bowlers Association (PBA), World Bowling Federation.
+
+│   │   │   ├── Tournament Format → Types of competition structures, including Elimination, Round-robin, Knockout.
+
+
+
+
+
+

@@ -246,8 +246,16 @@ postgresql = [
     "sqlalchemy[postgresql_psycopg2binary]>=2.0.38,<3.0.0",
     "sqlalchemy[postgresql_psycopg]>=2.0.38,<3.0.0",
 ]
-ab = [
+
+custom-nantawat = [
+    "folium==0.19.5",
+    "geopy==2.4.1",
     "langflow[docling]",
+    "markdownify>=1.2.0",
+    "openrouteservice==2.3.3",
+    "osmnx==2.0.2",
+    "python-whois>=0.9.6",
+    "tldextract>=5.3.0",
 ]
 
 [tool.uv]

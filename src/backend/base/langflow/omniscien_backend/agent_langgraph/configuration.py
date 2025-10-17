@@ -17,36 +17,13 @@ from langflow.omniscien_backend.agent_langgraph.prompt import (
 class Configuration(BaseModel):
     """Main configuration class for the Deep Research agent."""
 
-    # General Configuration
-    # max_structured_output_retries: int = Field(
-    #     default=3,
-    #     description="Maximum number of retries for structured output calls from models",
-    # )
-    # max_concurrent_research_units: int = Field(
-    #     default=5,
-    #     description="Maximum number of research units to run concurrently. This will allow the researcher to use multiple sub-agents to conduct research. Note: with more concurrency, you may run into rate limits.",
-    # )
-    # max_researcher_iterations: int = Field(
-    #     default=6,
-    #     description="Maximum number of research iterations for the Research Supervisor. This is the number of times the Research Supervisor will reflect on the research and ask follow-up questions.",
-    # )
     max_react_tool_calls: int = Field(
         default=10,
         description="Maximum number of tool calls for the Researcher agent in a single iteration.",
     )
-    # max_content_length: int = Field(
-    #     default=50000,
-    #     description="Maximum character length for webpage content before summarization is applied.",
-    # )
 
     # LLM Configuration
     llm: BaseChatModel = Field(
-        # default=init_chat_model(
-        #     model="us.meta.llama4-maverick-17b-instruct-v1:0",
-        #     model_provider="bedrock_converse",
-        #     temperature=0.1,
-        #     max_tokens=8192,
-        # ),
         description="The language model to use for research operations.",
     )
     research_agent_prompt: str = Field(

@@ -684,6 +684,9 @@ class FlowRunnerAPIComponent(Component):
         results = await self.flows_collection(flows_to_run)
         final_output = self.create_final_output(partial_output, results)
 
-        self.log(final_output, "Final output")
+        self.log(final_output, "Final output ")
+
+        # Save JSON output to context for use in converting to JSON
+        self.graph.context["jsonOutput"] = final_output
 
         return Data(data=final_output)

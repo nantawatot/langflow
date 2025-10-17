@@ -1,0 +1,50 @@
+Motorsports → Sport Category focusing on motor racing
+
+F1 Racing → Competition name, Formula 1 or F1 Racing
+
+Competition/Event → Name of the race, e.g., Formula 1 Monaco Grand Prix
+
+Season/Year → Year the event takes place, e.g., 2023
+
+Round/Stage → Competition rounds, e.g., Round 1, Round 2, Final Round
+
+Match → Driver head-to-head competition, e.g., Lewis Hamilton vs Max Verstappen
+
+Driver/Team → Information about drivers and their teams, e.g., Lewis Hamilton, Max Verstappen
+
+Role/Position → Participant role, e.g., Driver
+
+Team → Team names drivers represent, e.g., Mercedes, Red Bull Racing
+
+Car Number → Driver’s car number, e.g., 44 (Hamilton), 33 (Verstappen)
+
+Country → Driver’s nationality, e.g., United Kingdom, Netherlands
+
+Race Wins → Driver’s career achievements, e.g., 7-time World Champion (Hamilton)
+
+Management → Team leadership, e.g., Team Principal such as Toto Wolff (Mercedes), Christian Horner (Red Bull Racing)
+
+Sponsors → Sponsors supporting teams and drivers, e.g., Petronas (Mercedes), Infiniti (Red Bull Racing)
+
+Venue → Event location and track details, e.g., Location, Circuit Type (e.g., Street Circuit for Monaco GP)
+
+
+
+Motorsports → Category of Motor Racing Sports
+Competitive racing involving motor vehicles on circuits or tracks. It includes various disciplines like Formula 1, MotoGP, rallying, and more.
+├── F1 Racing → The highest class of international single-seater auto racing sanctioned by the FIA, known as Formula 1 or F1 Racing.
+│   ├── Competition/Event → Official Formula 1 races or championships (e.g., Monaco Grand Prix, British Grand Prix).
+│   │   ├── Round/Stage → Sequential events or race weekends during the championship season:
+│   │   │       • Round 1, Round 2 – Early races in the calendar.
+│   │   │       • Final Round – The concluding race that may decide the championship.
+│   │   │   ├── Venue → Details of the race location and circuit:
+│   │   │       • Location – Geographic place where the race is held (e.g., Monaco, Silverstone).
+│   │   │       • Circuit Type – Nature of the track, such as Street Circuit (e.g., Monaco GP), Permanent Circuit, or Hybrid.
+│   │   ├── Team → The racing teams participating in the championship, composed of drivers, engineers, and support staff. Examples: Mercedes, Red Bull Racing.
+│   │   │   ├── Driver → Professional race drivers contracted by teams, e.g., Lewis Hamilton, Max Verstappen.
+│   │   │   ├── Management → Team leadership responsible for strategy and operations:
+│   │   │       • Team Principal – The head of the team (e.g., Toto Wolff for Mercedes, Christian Horner for Red Bull).
+│   │   │   ├── Sponsors → Corporations or brands that provide financial backing to teams and drivers (e.g., Petronas for Mercedes, Infiniti for Red Bull Racing).
+
+
+

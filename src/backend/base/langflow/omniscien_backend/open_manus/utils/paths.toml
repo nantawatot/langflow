@@ -1,0 +1,3 @@
+result = "/app/src/backend/base/langflow/omniscien_backend/open_manus/results/"
+main = "/app/src/backend/base/langflow/omniscien_backend/open_manus/main.py"
+python = "/app/src/backend/base/langflow/omniscien_backend/open_manus/.venv/bin/python3.12"

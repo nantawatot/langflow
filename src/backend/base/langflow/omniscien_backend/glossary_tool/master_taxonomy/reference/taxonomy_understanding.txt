@@ -1,0 +1,63 @@
+Update:
+
+- This is the taxonomy that I have studied and understood so far.
+- I understand that a taxonomy is a way to classify things step by step, from general categories to more detailed ones.
+- The purpose is to organize the data and make it easier to understand.
+
+- I tried to find some examples from different areas and I understood it like this:
+   in biology (organisms): Domain -> Kingdom -> Phylum -> Class -> Order -> Family -> Genus -> Species
+   in Machine Learning:
+      ML -> linear reqression -> parameter, ...
+         -> k-nn -> ...
+         -> deep learning -> CNN -> ...
+                          -> LSTM -> ...
+                          -> genarative AI -> LLM -> model, ...
+                                           -> Image -> model, ...
+
+- So, if I apply this concept to a sport event, I think the structure should look something like this:
+
+{
+  "Cycling Sports": {
+    "Road Cycling": {
+      "General_Info": {
+        "Start_date": "start date of the event",
+        "End_date": "end date of the event",
+        "Category": "category of the event",
+        "UCI_Tour": "UCI tour of the event",
+        "Total_distance": "Total distance of the event"
+      },
+      "Teams": {
+        "Team A": {
+          "Player A-1": {
+            "Name": "Name of cyclist",
+            "Date of birth": "Birth date of cyclist",
+            "Nationality": "Nationality of cyclist",
+            "Weight": "Weight of cyclist",
+            "Height": "Height of cyclist",
+            "Place of birth": "Place of birth of cyclist",
+            "Points per specialty": {
+              "Onedayraces": "One day races score",
+              "GC": "GC score",
+              "TT": "TT score",
+              "Sprint": "Sprint score",
+              "Climber": "Climber score",
+              "Hills": "Hills score"
+            },
+            "Profile website": "Profile website of cyclist"
+          },
+          "Player A-2": "...same structure as Player A-1"
+        },
+        "Team B": "...same structure as Team A"
+      },
+      "Map": {
+        "Location A": {
+          "distance": "distance from previous location"
+        },
+        "Location B": "...same structure as Location A"
+      }
+    },
+    "Track Cycling": "...has a similar structure to Road Cycling"
+  }
+}
+
+- May I ask if this understand is correct?

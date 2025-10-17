@@ -1,0 +1,316 @@
+{
+  "Top Sport Category": {
+    "attributes": ["category", "description"],
+    "examples": [
+      {
+        "category": "Cycling Sports",
+        "description": "sports involving bicycles."
+      }
+    ]
+  },
+  "Sub Sport Category": {
+    "attributes": ["category", "description", "reference_website"],
+    "examples": [
+      {
+        "category": "Road Cycling",
+        "description": "Cycle races held on paved roads, usually over several hours or days.",
+        "reference_website": "https://www.topendsports.com/sport/list/cycling-road.htm"
+      }
+    ]
+  },
+  "Discipline Type": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Stage Race",
+        "description": "A race divided into multiple parts or stages over several days."
+      }
+    ]
+  },
+  "Competition/League Type": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Grand Slam",
+        "description": "The four major tennis tournaments."
+      }
+    ]
+  },
+  "Competition/Event": {
+    "attributes": ["name", "description", "location", "start_date", "end_date"],
+    "examples": [
+      {
+        "name": "Tour de France",
+        "description": "Annual men's multiple stage bicycle race primarily held in France.",
+        "location": "France",
+        "start_date": "2023-07-01",
+        "end_date": "2023-07-23"
+      }
+    ]
+  },
+  "Organization/Authority": {
+    "attributes": ["name", "type", "website"],
+    "examples": [
+      {
+        "name": "FIFA",
+        "type": "Governing Body",
+        "website": "https://www.fifa.com"
+      }
+    ]
+  },
+  "Season/Edition": {
+    "attributes": ["year", "edition_number"],
+    "examples": [
+      {
+        "year": 2023,
+        "edition_number": 110
+      }
+    ]
+  },
+  "Tournament Format": {
+    "attributes": ["format_name", "description"],
+    "examples": [
+      {
+        "format_name": "Round-robin",
+        "description": "Each participant plays every other participant."
+      }
+    ]
+  },
+  "Court Surface": {
+    "attributes": ["surface_type", "description"],
+    "examples": [
+      {
+        "surface_type": "Grass",
+        "description": "Natural grass surface, often used in tennis."
+      }
+    ]
+  },
+  "Division/Category/Bracket": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Men's Bracket",
+        "description": "Competition category for male athletes."
+      }
+    ]
+  },
+  "Stage/Match/Round": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Group Stage",
+        "description": "Initial phase where teams compete in groups."
+      }
+    ]
+  },
+  "Venue": {
+    "attributes": ["name", "location", "capacity"],
+    "examples": [
+      {
+        "name": "Lusail Stadium",
+        "location": "Qatar",
+        "capacity": 80000
+      }
+    ]
+  },
+  "Team/Player Group": {
+    "attributes": ["name", "type", "country"],
+    "examples": [
+      {
+        "name": "Brazil",
+        "type": "National Team",
+        "country": "Brazil"
+      }
+    ]
+  },
+  "Athlete/Driver/Player": {
+    "attributes": ["name", "birthdate", "nationality", "team"],
+    "examples": [
+      {
+        "name": "Lionel Messi",
+        "birthdate": "1987-06-24",
+        "nationality": "Argentina",
+        "team": "Inter Miami CF"
+      }
+    ]
+  },
+  "Role/Position": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Goalkeeper",
+        "description": "Player who guards the goal in football."
+      }
+    ]
+  },
+  "Equipment/Vehicle": {
+    "attributes": ["name", "type", "manufacturer"],
+    "examples": [
+      {
+        "name": "Bianchi Bike",
+        "type": "Bicycle",
+        "manufacturer": "Bianchi"
+      }
+    ]
+  },
+  "Athlete Ranking": {
+    "attributes": ["ranking_name", "rank", "date"],
+    "examples": [
+      {
+        "ranking_name": "BWF World Ranking",
+        "rank": 1,
+        "date": "2024-04-01"
+      }
+    ]
+  },
+  "Time/Record": {
+    "attributes": ["record_type", "value", "date"],
+    "examples": [
+      {
+        "record_type": "World Record",
+        "value": "9.58s",
+        "date": "2009-08-16"
+      }
+    ]
+  },
+  "Title/Championship": {
+    "attributes": ["name", "year"],
+    "examples": [
+      {
+        "name": "PBA World Championship",
+        "year": 2023
+      }
+    ]
+  },
+  "Management": {
+    "attributes": ["name", "role"],
+    "examples": [
+      {
+        "name": "Pep Guardiola",
+        "role": "Head Coach"
+      }
+    ]
+  },
+  "Sponsors": {
+    "attributes": ["name", "industry"],
+    "examples": [
+      {
+        "name": "Nike",
+        "industry": "Sportswear"
+      }
+    ]
+  },
+  "Team Ranking": {
+    "attributes": ["ranking_name", "rank", "date"],
+    "examples": [
+      {
+        "ranking_name": "MLB Power Rankings",
+        "rank": 2,
+        "date": "2024-05-01"
+      }
+    ]
+  },
+  "Fanbase": {
+    "attributes": ["name", "description"],
+    "examples": [
+      {
+        "name": "Yankees Nation",
+        "description": "Fans of New York Yankees baseball team."
+      }
+    ]
+  },
+  "Horse/Runner": {
+    "attributes": ["name", "birth_year", "owner"],
+    "examples": [
+      {
+        "name": "Secretariat",
+        "birth_year": 1970,
+        "owner": "Penny Chenery"
+      }
+    ]
+  },
+  "Jockey": {
+    "attributes": ["name", "birthdate", "nationality"],
+    "examples": [
+      {
+        "name": "Frankie Dettori",
+        "birthdate": "1970-12-15",
+        "nationality": "Italian"
+      }
+    ]
+  },
+  "Trainer": {
+    "attributes": ["name", "specialty"],
+    "examples": [
+      {
+        "name": "Bob Baffert",
+        "specialty": "Thoroughbred racehorse training"
+      }
+    ]
+  },
+  "Owner": {
+    "attributes": ["name", "country"],
+    "examples": [
+      {
+        "name": "Coolmore Stud",
+        "country": "Ireland"
+      }
+    ]
+  },
+  "Team/Stable": {
+    "attributes": ["name", "headquarters"],
+    "examples": [
+      {
+        "name": "Godolphin",
+        "headquarters": "Dubai"
+      }
+    ]
+  },
+  "Betting Odds": {
+    "attributes": ["odds", "type"],
+    "examples": [
+      {
+        "odds": "5/1",
+        "type": "Fractional"
+      }
+    ]
+  },
+  "Time/Speed": {
+    "attributes": ["value", "unit", "context"],
+    "examples": [
+      {
+        "value": "2:00:34",
+        "unit": "HH:MM:SS",
+        "context": "Marathon finishing time"
+      }
+    ]
+  },
+  "Referee": {
+    "attributes": ["name", "sport"],
+    "examples": [
+      {
+        "name": "Earl Strom",
+        "sport": "Basketball"
+      }
+    ]
+  },
+  "Prize Money/Rewards": {
+    "attributes": ["amount", "currency", "description"],
+    "examples": [
+      {
+        "amount": 50000,
+        "currency": "USD",
+        "description": "Winner's prize money"
+      }
+    ]
+  },
+  "Broadcast": {
+    "attributes": ["station_name", "region"],
+    "examples": [
+      {
+        "station_name": "ESPN",
+        "region": "USA"
+      }
+    ]
+  }
+}

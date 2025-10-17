@@ -1,0 +1,106 @@
+{
+    "level 1": {
+        "category": "Hockey Sports",
+        "description": "such as field hockey, ice hockey and roller hockey."
+    },
+    "level 2": {
+        "category": "Lacrosse",
+        "description": "a team game, originally played by North American Indians, in which the ball is thrown, caught, and carried with a long-handled stick with a piece of shallow netting at one end. Versions include Field Lacrosse, Box Lacrosse, Women's Lacrosse, Sixes Lacrosse.",
+        "reference_website": "https://www.topendsports.com/sport/list/lacrosse.htm"
+    }
+}
+
+
+
+
+Lacrosse → Sport Category
+
+Field Lacrosse → Subcategory focused on outdoor field lacrosse
+
+Box Lacrosse → Subcategory focused on indoor box lacrosse
+
+Competition/Event → Tournament names, e.g., NCAA Lacrosse Championship, World Lacrosse Championship, Major League Lacrosse
+
+Season/Year → Year the event occurs, e.g., 2023
+
+Round/Match → Competition stages, e.g., Quarterfinals, Semifinals, Final
+
+Team/Club → Participating teams, e.g., Team USA, Canada, Philadelphia Wings
+
+Athlete → Player names, e.g., Lyle Thompson, Tom Schreiber, Trevor Baptiste
+
+Role/Position → Player roles, e.g., Attackman, Midfielder, Defenseman, Goalkeeper
+
+Equipment/Brand/Model → Player gear, e.g., Lacrosse Stick, Helmet such as Warrior Evo, STX Surgeon
+
+Management → Team officials, e.g., Head Coach, Assistant Coach, General Manager
+
+Sponsors → Team sponsors, e.g., Nike, Adidas, Under Armour
+
+Ranking → Team rankings, e.g., World Ranking, NCAA Ranking
+
+Venue → Event locations, e.g., Gillette Stadium, M&T Bank Stadium
+
+Prize Money/Rewards → Prize amounts or awards, e.g., $10,000, Gold Medal
+
+Federation → Organizing bodies, e.g., World Lacrosse, NCAA
+
+Time/Record → Performance stats, e.g., Most Goals in a Game, Fastest Shot
+
+Club/League → Associated leagues or clubs, e.g., National Lacrosse League (NLL), Premier Lacrosse League (PLL)
+
+Tournament Type → Competition types, e.g., Invitational, Championship, Exhibition
+
+
+
+Hockey Sports → Sport Category
+
+├── Lacrosse → A fast-paced team sport played with sticks and a ball, featuring different formats like field and box lacrosse.
+
+│   ├── Discipline Type → Various competition styles including:
+│       • Field Lacrosse – Played outdoors on a large field with 10 players per team.
+│       • Box Lacrosse – Indoor version played in a smaller enclosed area with 6 players per team.
+
+│   │   ├── Competition/Event → Major tournaments and leagues such as NCAA Lacrosse Championship, World Lacrosse Championship, Major League Lacrosse.
+
+│   │   │   ├── Tournament Type → Types of competitions, including Invitational events, Championship tournaments, and Exhibition matches.
+
+│   │   │   ├── Season/Year → The calendar year or season when the competition takes place, e.g., 2023.
+
+│   │   │   ├── Venue → Locations hosting events, such as Gillette Stadium, M&T Bank Stadium.
+
+│   │   │   ├── Round/Match → Competitive stages like Quarterfinals, Semifinals, and Finals.
+
+│   │   │   ├── Team/Club → Participating teams like Team USA, Canada, Philadelphia Wings.
+
+│   │   │   │   ├── Club/League → Governing leagues or associations such as National Lacrosse League (NLL), Premier Lacrosse League (PLL).
+
+│   │   │   │   ├── Athlete → Player names including Lyle Thompson, Tom Schreiber, Trevor Baptiste.
+
+│   │   │   │   │   ├── Role/Position → Player positions such as Attackman, Midfielder, Defenseman, Goalkeeper.
+
+│   │   │   │   │   ├── Equipment/Brand/Model → Essential gear like lacrosse sticks and helmets (e.g., Warrior Evo, STX Surgeon).
+
+│   │   │   │   │   ├── Time/Record → Player achievements like Most Goals in a Game, Fastest Shot.
+
+│   │   │   │   ├── Management → Team leadership roles such as Head Coach, Assistant Coach, General Manager.
+
+│   │   │   │   ├── Sponsors → Team sponsors including Nike, Adidas, Under Armour.
+
+│   │   │   │   ├── Ranking → Team rankings such as World Ranking, NCAA Ranking.
+
+│   │   │   ├── Prize Money/Rewards → Awards or prize money like $10,000, Gold Medal.
+
+│   │   │   ├── Federation → Governing bodies like World Lacrosse, NCAA.
+
+
+
+
+
+
+
+
+
+
+
+

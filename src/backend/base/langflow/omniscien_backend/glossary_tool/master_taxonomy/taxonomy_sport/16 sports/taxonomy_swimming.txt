@@ -1,0 +1,79 @@
+{
+    "level 1": {
+        "category": "Swimming",
+        "description": "the sport of propelling oneself through water using the limbs."
+    },
+    "level 2": {
+        "category": "Freestyle",
+        "description": "in these events competitors can swim using any stroke of their choice.",
+        "reference_website": "https://www.topendsports.com/sport/list/swimming-freestyle.htm"
+    }
+}
+
+Top Sport Category → Sport categories, such as Swimming, Athletics, Basketball, Football
+├── Sub Sport Category → Specific sub-categories, such as Freestyle, Backstroke, Breaststroke, Butterfly, Medley
+│   ├── Discipline Type → Type of swimming event, such as Individual Medley, Relay, Open Water
+│   │   ├── Competition/Event → Name of the event, such as Olympic Games, FINA World Championships, World Cup Series
+│   │   │   ├── Season/Year → Year of the event, e.g., 2023
+│   │   │   ├── Heat/Final → Competition stages, e.g., Preliminary Heat, Semifinals, Final
+│   │   │   ├── Athlete → Athlete names, e.g., Michael Phelps, Katie Ledecky, Caeleb Dressel
+│   │   │   │   ├── Role/Position → Athlete roles, e.g., World Record Holder, Olympic Champion
+│   │   │   │   ├── Team/Club → Participating teams, e.g., USA Swimming, Swim Canada, Great Britain Swimming
+│   │   │   │   ├── Management → Team officials, e.g., Coach, Team Manager, Sports Director
+│   │   │   │   ├── Sponsors → Athlete sponsors, e.g., Speedo, Nike, Under Armour
+│   │   │   │   ├── Ranking → Athlete rankings, e.g., FINA World Rankings
+│   │   │   │   ├── Venue → Event locations, e.g., Tokyo Aquatics Centre, Beijing National Aquatics Center
+│   │   │   │   ├── Prize Money/Rewards → Prize amounts or awards, e.g., $1 million, Gold Medal
+│   │   │   │   ├── Equipment/Brand/Model → Equipment used, e.g., Pools, Swim Caps, Swimwear such as Arena, Speedo Fastskin
+│   │   │   │   ├── Federation → Organizing bodies, e.g., FINA (Fédération Internationale de Natation), National Swimming Federations
+│   │   │   │   │   ├── Time/Record → Performance stats, e.g., World Record, Personal Best
+│   │   │   ├── Club/League → Associated clubs or leagues, e.g., NCAA Swimming, ISL (International Swimming League)
+│   │   │   ├── Tournament Type → Competition types, e.g., Invitational, Championship, Exhibition
+│   │   │   ├── Relay/Team Event → Team-based swimming events, e.g., 4x100m Freestyle Relay, 4x200m Freestyle Relay
+│   │   │   ├── Open Water → Long-distance swimming events in natural water bodies, e.g., 10km Marathon Swim, 5km Open Water Swim
+│   │   │   ├── Para Swimming → Swimming events for athletes with disabilities, e.g., S6 Freestyle, S8 Backstroke
+
+Swimming → Sport Category
+Freestyle → Subcategory focused on freestyle swimming events
+Backstroke → Subcategory focused on backstroke swimming events
+Breaststroke → Subcategory focused on breaststroke swimming events
+Butterfly → Subcategory focused on butterfly swimming events
+Medley → Subcategory focused on medley swimming events (combining all four strokes)
+Competition/Event → Tournament names, e.g., Olympic Games, FINA World Championships, World Cup Series
+Season/Year → Year the event occurs, e.g., 2023
+Heat/Final → Competition stages, e.g., Preliminary Heat, Semifinals, Final
+Athlete → Athlete names, e.g., Michael Phelps, Katie Ledecky, Caeleb Dressel
+Role/Position → Athlete roles, e.g., World Record Holder, Olympic Champion
+Team/Club → Participating teams, e.g., USA Swimming, Swim Canada, Great Britain Swimming
+Management → Team officials, e.g., Coach, Team Manager, Sports Director
+Sponsors → Athlete sponsors, e.g., Speedo, Nike, Under Armour
+Ranking → Athlete rankings, e.g., FINA World Rankings
+Venue → Event locations, e.g., Tokyo Aquatics Centre, Beijing National Aquatics Center
+Prize Money/Rewards → Prize amounts or awards, e.g., $1 million, Gold Medal
+Equipment/Brand/Model → Equipment used, e.g., Pools, Swim Caps, Swimwear such as Arena, Speedo Fastskin
+Federation → Organizing bodies, e.g., FINA (Fédération Internationale de Natation), National Swimming Federations
+Time/Record → Performance stats, e.g., World Record, Personal Best
+
+Swimming → Sport Category
+├── Freestyle → A competitive swimming stroke focusing on speed and efficiency.
+│   ├── Competition/Event → Major meets such as the Olympic Games, FINA World Championships, World Cup Series.
+│   │   ├── Season/Year → Year of the event, e.g., 2023.
+│   │   ├── Venue → Locations like Tokyo Aquatics Centre, Beijing National Aquatics Center.
+│   │   ├── Heat/Final → Competition rounds such as Preliminary Heat, Semifinals, Final.
+│   │   ├── Nation/Team → Participating teams such as USA Swimming, Swim Canada, Great Britain Swimming.
+│   │   │   ├── Athlete → Swimmers like Michael Phelps, Katie Ledecky, Caeleb Dressel.
+│   │   │   │   │   ├── Role/Position → Titles such as World Record Holder, Olympic Champion.
+│   │   │   │   │   ├── Equipment/Brand/Model → Gear used including pools, swim caps, suits (e.g., Arena, Speedo Fastskin).
+│   │   │   │   │   ├── Ranking → Official standings like FINA World Rankings.
+│   │   │   │   │   ├── Time/Record → Performance metrics including World Records, Personal Bests.
+│   │   │   ├── Management → Staff such as Coach, Team Manager, Sports Director.
+│   │   │   ├── Sponsors → Athlete sponsors like Speedo, Nike, Under Armour.
+│   │   │   ├── Prize Money/Rewards → Awards including monetary prizes, Gold Medals.
+│   │   │   ├── Federation → Governing bodies like FINA (Fédération Internationale de Natation), National Swimming Federations.
+
+
+
+
+
+
+

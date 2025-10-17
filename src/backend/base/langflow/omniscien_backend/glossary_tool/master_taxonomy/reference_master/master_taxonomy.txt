@@ -1,0 +1,33 @@
+Top Sport Category → Sport categories, such as Ball Sports, Combat Sports, Motor Sports, Endurance Sports
+├── Sub Sport Category → Specific sub-categories, such as Road Cycling, Association Football
+│   ├── Discipline Type → Type of competition, such as Stage Race, Stroke Play
+│   │   ├── Competition/League Type → Type of tournament, such as Grand Slam, World Cup, Tour
+│   │   │   ├── Competition/Event → Name of the event, such as Tour de France
+│   │   │   │   ├── Organization/Authority → Governing body or authority, such as FIFA, IOC, UCI
+│   │   │   │   ├── Season/Edition → Year or edition of the event, such as 2022, 2023, 148th Edition
+│   │   │   │   ├── Tournament Format → Competition format, such as Round-robin, Knockout Stage, Double-elimination
+│   │   │   │   ├── Court Surface → Playing surface, such as Grass, Clay, Hard Court
+│   │   │   │   ├── Division/Category/Bracket → Categories or divisions, such as Men's/Women's bracket, U-20/U-17
+│   │   │   │   │   ├── Stage/Match/Round → Stage or round of the competition, such as Group Stage, Stage 1, Round 4
+│   │   │   │   │   │   ├── Venue → Location of the event, such as Lusail Stadium, Circuit de Monaco
+│   │   │   │   │   ├── Team/Player Group → Name of the team, athletes, or groups, such as Brazil, Red Bull Racing
+│   │   │   │   │   │   ├── Athlete/Driver/Player → Name of the individual athletes or drivers, such as Lionel Messi, Max Verstappen
+│   │   │   │   │   │   │   ├── Role/Position → Role or position within the team or sport, such as Goalkeeper, Driver
+│   │   │   │   │   │   │   ├── Equipment/Vehicle → Equipment or vehicle used in the competition, such as Bianchi Bike, RB19
+│   │   │   │   │   │   │   ├── Athlete Ranking → Athlete rankings, such as BWF World Ranking
+│   │   │   │   │   │   │   ├── Time/Record → Performance times or records, such as World Record, Personal Best
+│   │   │   │   │   │   │   ├── Title/Championship → Titles or awards, such as PBA World Championship, World Cup of Bowling
+│   │   │   │   │   │   ├── Management → Managers, coaches, or team personnel, such as Head Coach, Team Principal
+│   │   │   │   │   │   ├── Sponsors → Financial sponsors, such as Nike, Petronas
+│   │   │   │   │   │   ├── Team Ranking → Team rankings, such as MLB Power Rankings, Wild Card Standings
+│   │   │   │   │   │   ├── Fanbase → Fan groups, such as "Yankees Nation," "Red Sox Nation"
+│   │   │   │   │   ├── Horse/Runner → Horse or competitor names, such as Secretariat, Red Rum
+│   │   │   │   │   │   ├── Jockey → Jockey names, such as Frankie Dettori
+│   │   │   │   │   │   ├── Trainer → Trainers, such as Bob Baffert
+│   │   │   │   │   │   ├── Owner → Owners, such as Coolmore Stud
+│   │   │   │   │   │   ├── Team/Stable → Stables or training teams, such as Godolphin
+│   │   │   │   │   │   ├── Betting Odds → Betting odds, such as 5/1, 10/1
+│   │   │   │   │   │   ├── Time/Speed → Time or speed records, such as 2:00:34, 35 mph
+│   │   │   │   │   ├── Referee → Referees, such as Earl Strom, Joey Crawford
+│   │   │   │   │   ├── Prize Money/Rewards → Prizes or prize money, such as $50,000, Gold Medal
+│   │   │   │   │   ├── Broadcast → Broadcast stations, such as ESPN, Fox Sports, MLB Network
