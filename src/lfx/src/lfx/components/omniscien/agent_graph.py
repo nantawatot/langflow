@@ -2,7 +2,6 @@ import uuid
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
-
 from langflow.custom.custom_component.component import Component
 from langflow.inputs.inputs import MultilineInput
 from langflow.io import HandleInput, IntInput

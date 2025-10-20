@@ -5,7 +5,6 @@ import os
 import re
 
 from docx import Document
-
 from langflow.custom import Component
 from langflow.io import MessageTextInput, Output
 from langflow.schema import Message

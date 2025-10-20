@@ -4,14 +4,13 @@ from typing import Any
 from langchain_core.documents import Document
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
-from langgraph.constants import END
-from langgraph.graph import StateGraph
-from pydantic import BaseModel
-
 from langflow.custom import Component
 from langflow.inputs import DataInput, HandleInput, IntInput, MessageInput
 from langflow.schema import Message
 from langflow.template import Output
+from langgraph.constants import END
+from langgraph.graph import StateGraph
+from pydantic import BaseModel
 
 
 class ContractSummarizerMapReduce(Component):
