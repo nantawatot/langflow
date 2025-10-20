@@ -190,7 +190,7 @@ async def supervisor_tools(state: SupervisorState, config: RunnableConfig) -> Co
 
 # Supervisor Subgraph Construction
 # Creates the supervisor workflow that manages research delegation and coordination
-supervisor_builder = StateGraph(SupervisorState, config_schema=Configuration)
+supervisor_builder = StateGraph(SupervisorState, context_schema=Configuration)
 
 # Add supervisor nodes for research management
 supervisor_builder.add_node("supervisor", supervisor)  # Main supervisor logic

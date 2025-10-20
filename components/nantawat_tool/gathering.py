@@ -550,6 +550,8 @@ class GatheringComponent(LCToolComponent):
     async def save_to_file(self) -> Message:
         """Save the input to a file and upload it, returning a confirmation message."""
         # Validate inputs
+
+        logger.info("Starting to save content to file...")
         input_data = DataFrame(data=await self.fetch_url_contents())
 
         if not self.file_name and not self.directory_name:
@@ -750,6 +752,7 @@ class GatheringComponent(LCToolComponent):
 
         # Return the final file path and confirmation message
         final_path = Path.cwd() / file_path if not file_path.is_absolute() else file_path
+        logger.info(f"File saved successfully as '{final_path}'")
         return Message(text=f"{confirmation} at {final_path}")
 
     async def _save_to_aws(self, input_data) -> Message:

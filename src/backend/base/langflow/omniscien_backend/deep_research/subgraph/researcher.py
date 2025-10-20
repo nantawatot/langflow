@@ -223,7 +223,7 @@ async def compress_research(state: ResearcherState, config: RunnableConfig):
 
 # Researcher Subgraph Construction
 # Creates individual researcher workflow for conducting focused research on specific topics
-researcher_builder = StateGraph(ResearcherState, output=ResearcherOutputState, config_schema=Configuration)
+researcher_builder = StateGraph(ResearcherState, output_schema=ResearcherOutputState, context_schema=Configuration)
 
 # Add researcher nodes for research execution and compression
 researcher_builder.add_node("researcher", researcher)  # Main researcher logic

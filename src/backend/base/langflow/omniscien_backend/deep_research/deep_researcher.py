@@ -182,7 +182,7 @@ async def final_report_generation(state: AgentState, config: RunnableConfig):
 
 # Main Deep Researcher Graph Construction
 # Creates the complete deep research workflow from user input to final report
-deep_researcher_builder = StateGraph(AgentState, input=AgentInputState, config_schema=Configuration)
+deep_researcher_builder = StateGraph(AgentState, input_schema=AgentInputState, context_schema=Configuration)
 
 # Add main workflow nodes for the complete research process
 deep_researcher_builder.add_node("write_research_brief", write_research_brief)  # Research planning phase

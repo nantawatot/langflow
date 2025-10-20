@@ -346,7 +346,7 @@ def get_today_str() -> str:
     return datetime.now().strftime("%a %b %-d, %Y")
 
 
-agent_builder = StateGraph(state_schema=ResearcherState, output=ResearcherOutputState, config_schema=Configuration)
+agent_builder = StateGraph(state_schema=ResearcherState, output_schema=ResearcherOutputState, context_schema=Configuration)
 
 # Add nodes to the graph
 agent_builder.add_node("llm_call", llm_call)

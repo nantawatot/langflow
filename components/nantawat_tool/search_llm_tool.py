@@ -1,9 +1,13 @@
 from datetime import datetime
-
+import aiohttp
+import asyncio
 import pandas as pd
 from langchain_core.messages import (
     HumanMessage,
 )
+
+from markdownify import markdownify
+from loguru import logger
 from lfx.base.langchain_utilities.model import LCToolComponent
 from lfx.io import (
     HandleInput,
@@ -13,6 +17,7 @@ from lfx.io import (
 from lfx.schema.data import Data
 from lfx.schema.dataframe import DataFrame
 from pydantic import BaseModel
+
 
 summarize_webpage_prompt = """You are tasked with summarizing the raw content of a webpage retrieved from a web search. Your goal is to create a summary that preserves the most important information from the original web page. This summary will be used by a downstream research agent, so it's crucial to maintain the key details without losing essential information.
 
@@ -99,12 +104,20 @@ class SearchLLMTool(LCToolComponent):
     name = "CustomComponent222"
 
     inputs = [
-        MessageTextInput(
+        HandleInput(
             name="input_value",
             display_name="Input Value",
             info="This is a custom component Input",
             value="Hello, World!",
-            tool_mode=True,
+            input_types=["Data", "DataFrame", "Message", "list"],
+             # tool_mode=True,
+        ),
+        MessageTextInput(
+            name="column_name",
+            display_name="Column Name",
+            info="The raw HTML content of the webpag.",
+            required=True,
+            value="raw_content",
         ),
         HandleInput(
             name="llm",
@@ -113,6 +126,7 @@ class SearchLLMTool(LCToolComponent):
             info="The LLM used to run the summarization chain.",
             required=True,
         ),
+
     ]
 
     outputs = [
@@ -120,7 +134,16 @@ class SearchLLMTool(LCToolComponent):
     ]
 
     def build_output(self) -> Data:
-        data = Data(value=self.input_value)
+        """Build the output data."""
+        # for idx, row in self.input_value.iterrows():
+        #     print(row["raw_content"])
+        try:
+            result = self.wrap_search_llm_tool(self.input_value)
+        except Exception as e:
+            logger.error(str(e))
+        with open("debug_search_llm_tool.md", "w") as f:
+            f.write(result)
+        data = Data(value=result)
         self.status = data
         return data
 
@@ -136,35 +159,45 @@ class SearchLLMTool(LCToolComponent):
             "raw_content": "cleaned and parsed HTML of each search result"
         }
         """
-        # search_result_converted = safe_convert(search_result, pd.DataFrame)
         summary_result = []
+        # task = []
         for idx, row in search_result.iterrows():
-            summary_result.append(self.reformat_content(row["raw_content"]))
-
-        summary_result = search_result["raw_content_new"].apply(self.process_df)
-        # summary_result = asyncio.run(*[
-        #     self.reformat_content(row['raw_content']) for index, row in search_result.iterrows()
-        # ])
+            if pd.isna(row.get(self.column_name)):
+                summary_result.append(None)
+                continue
+            # task.append(self.fetch_content_from_url(row.get("url")))
+            summary_result.append(markdownify(row.get(self.column_name), heading_style="ATX", autolinks=True))
+            # summary_result.append(self.reformat_content(row.get("raw_content")))
+        # summary_result = asyncio.gather(*task)
 
         format_output = "Search Results: \n\n"
-        for (index, row), summ in zip(search_result.iterrows(), summary_result.tolist(), strict=False):
+        count = 0
+        for (index, row), summ in zip(search_result.iterrows(), summary_result, strict=False):
+            if summ is None:
+                continue
+            format_output += f"\n\n--- SOURCE {count + 1}: {row['title']} ---\n"
             format_output += f"Title: {row['title']}\n"
             format_output += f"URL: {row['url']}\n"
-            format_output += f"Summary: {summ.summary}\n"
+            # format_output += f"Content: \n{summ.summary}\n"
+            format_output += f"Content: \n{summ}\n"
+            format_output += "\n\n" + "-" * 80 + "\n"
+        return format_output
 
-    def process_df(self, df: pd.DataFrame) -> pd.DataFrame:
-        task = [self.reformat_content(row) for row in df[["raw_content"]]]
-        results = task
-        df["raw_content_new"] = results
-        return df
+    async def fetch_content_from_url(self, url: str) -> str:
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.get(url) as response:
+                    response.raise_for_status()
+                    return await response.text()
+            except aiohttp.ClientError as e:
+                logger.error(f"Error fetching content from {url}: {e}")
+                return None
 
     def reformat_content(self, webpage_content: str) -> str:
         """Reformat Content and Pass to LLM"""
+        if not webpage_content or len(webpage_content.strip()) == 0:
+            return None
         prompt_content = summarize_webpage_prompt.format(webpage_content=webpage_content, date=get_today_str())
         llm_with_structure = self.llm.with_structured_output(Summary)
         summary = llm_with_structure.invoke([HumanMessage(content=prompt_content)])
         return summary
-
-
-if __name__ == "__main__":
-    pass
