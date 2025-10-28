@@ -2,19 +2,23 @@ import uuid
 
 from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
+from langflow.custom.custom_component.component import Component
+from langflow.inputs.inputs import MultilineInput
+from langflow.io import HandleInput, IntInput
+
+# from langflow.omniscien_backend.participant_langgraph.graph import researcher_agent
 from langflow.omniscien_backend.agent_langgraph.graph import researcher_agent
 from langflow.schema import Message
-
-from lfx.custom.custom_component.component import Component
-from lfx.inputs.inputs import MultilineInput
-from lfx.io import HandleInput, IntInput
-from lfx.template.field.base import Output
+from langflow.template.field.base import Output
 
 INIT_PROMPT = """
-# Event Athlete Information Extraction %s.
+# Event Athlete Information Extraction.
+Query: {query}
 
 ### Detail Schema
-%s
+{detail_schema}
+Reminder:
+- If number of athletes is a lot (over 100), preserve name and team is more important than other attributes.
 
 ## Role
 You are a **Sports Research Specialist** — an expert in analyzing professional sporting events and athlete participation. Your job is to extract and **gather the Athlete Detail section** for a single event using authoritative sources.
@@ -75,70 +79,62 @@ You are a **Sports Research Specialist** — an expert in analyzing professional
 1.  A single, valid JSON object that strictly adheres to the format specified below.
 2.  The literal string `"no information"` if you cannot find a complete, authoritative list of participants.
 
-**DO NOT output anything else.** Do not output explanations, comments, or your internal tool calls (e.g., `{"name": "search_internet", ...}`). Your reasoning and tool usage are intermediate steps, not the final answer.
+**DO NOT output anything else.** Do not output explanations, comments, or your internal tool calls (e.g., `{{"name": "search_internet", ...}}`). Your reasoning and tool usage are intermediate steps, not the final answer.
 
 ---
 
-### Example (short sample based on {Detail Schema} = [full_name, team_name, nationality])
+### Example (short sample based on if Detail Schema is [full_name, team_name, nationality])
+
+#### TEAM SPORT
 ```json
-{
+{{
   "event": "Sample Race 2025",
   "athletes": [
-    {
-      "full_name": "Julien Dupont",
-      "team_name": "Team Example",
-      "nationality": "France"
-    },
-    {
-      "full_name": "Marco Rossi",
-      "team_name": "Team Example",
-      "nationality": "Italy"
-    }
-  ],
-  "teams": [
-    {
-      "team_name": "Team Example",
-      "nationality": "France",
-      "roster_count": 2
-    }
+  {{"Team Example 1":
+        {{
+        "atheleth name": ["Alice Smith", "Bob Johnson"],
+        "nationality": "USA",
+         }},
+    {{"Team Example 2":
+         {{
+        "atheleth name": ["John Doe", "Jane Roe"],
+        "nationality": "Italy",
+         }},
   ]
-}
+}}
 ```
 
+#### INDIVIDUAL SPORT
 ```json
-{
-  "event": "YONEX German Open 2025",
+{{
+  "event": "Sample Badminton Open 2025",
   "athletes": [
-    {
+    {{
       "full_name": "Viktor Axelsen",
-      "team_name": "Denmark National Team",
       "nationality": "Denmark"
-    },
-    {
+    }},
+    {{
       "full_name": "Kento Momota",
-      "team_name": "Japan National Team",
       "nationality": "Japan"
-    }
+    }}
   ],
-  "teams": []
-}
+}}
 ```
 
----
-
 ```json
-{
+{{
 "event": "<Event Name from input>",
   "athletes": [
     "team name" : [
-      {"athletes name":  name of athletes,
-        fields according to {Detail Schema}
-      }
+      {{"athletes name":  name of athletes,
+        fields according to {{Detail Schema}}
+      }}
     ],
   ]
-}
+}}
 ```
 """
+
 
 class ParticipantAgent(Component):
     display_name = "Participant Agent"
@@ -148,6 +144,11 @@ class ParticipantAgent(Component):
 
     inputs = [
         MultilineInput(name="input_value", display_name="Input"),
+        MultilineInput(
+            name="detail_schema",
+            display_name="Detail Schema",
+            info="The detail schema in JSON list format. E.g. ['full_name', 'team_name', 'nationality']",
+        ),
         HandleInput(
             name="llm",
             display_name="Language Model",
@@ -219,9 +220,9 @@ class ParticipantAgent(Component):
             },
             "recursion_limit": self.max_recursion_limit,
         }
-        invoke_prompt = INIT_PROMPT % (
-            self.input_value,
-            '["full_name", "team_name", "nationality"]',
+        invoke_prompt = INIT_PROMPT.format(
+            query=self.input_value,
+            detail_schema=self.detail_schema or '["full_name", "team_name"]',
         )
         result = await researcher_agent.ainvoke(
             {
@@ -231,5 +232,4 @@ class ParticipantAgent(Component):
             },
             config,
         )
-
         return Message(text=result["compressed_research"])

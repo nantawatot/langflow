@@ -2,7 +2,6 @@ import ast
 from typing import Any
 
 import httpx
-from langflow.base.flow_processing.utils import build_data_from_run_outputs
 from langflow.custom import Component
 from langflow.helpers.flow import run_flow
 from langflow.inputs.inputs import (
@@ -11,6 +10,8 @@ from langflow.inputs.inputs import (
 )
 from langflow.schema import Data, dotdict
 from langflow.template import Output
+
+from lfx.base.flow_processing.utils import build_data_from_run_outputs
 
 
 def merge_string_to_dict(string: str, dict: dict) -> dict:

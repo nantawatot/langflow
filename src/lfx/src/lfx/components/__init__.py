@@ -71,6 +71,7 @@ if TYPE_CHECKING:
         nvidia,
         olivya,
         ollama,
+        omniscien,
         openai,
         openrouter,
         output_parsers,
@@ -207,6 +208,7 @@ _dynamic_imports = {
     "yahoosearch": "__module__",
     "youtube": "__module__",
     "zep": "__module__",
+    "omniscien": "__module__",
 }
 
 # Track which modules we've already discovered to avoid re-scanning
@@ -303,6 +305,7 @@ __all__ = [
     "nvidia",
     "olivya",
     "ollama",
+    "omniscien",
     "openai",
     "openrouter",
     "output_parsers",

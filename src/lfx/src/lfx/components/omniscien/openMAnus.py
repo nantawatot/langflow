@@ -1,5 +1,12 @@
 from langflow.custom import Component
-from langflow.inputs.inputs import BoolInput, DropdownInput, IntInput, MessageTextInput, MultilineInput
+from langflow.inputs.inputs import (
+    BoolInput,
+    DropdownInput,
+    # CustomInput,
+    IntInput,
+    MessageTextInput,
+    MultilineInput,
+)
 from langflow.omniscien_backend.open_manus.utils.executor import openmanus
 from langflow.schema import Data, Message
 from langflow.template import Output

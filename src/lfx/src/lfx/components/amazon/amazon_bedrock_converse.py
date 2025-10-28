@@ -173,8 +173,15 @@ class AmazonBedrockConverseComponent(LCModelComponent):
             init_params["additional_model_request_fields"] = additional_model_request_fields
 
         try:
-            config = Config(read_timeout=1500)
+            config = Config(
+                read_timeout=1500,
+                # retries={
+                #     "max_attempts": 10,
+                #     'mode': 'adaptive'
+                # }
+            )
             init_params["config"] = config
+
             output = ChatBedrockConverse(**init_params)
         except Exception as e:
             # Provide helpful error message with fallback suggestions

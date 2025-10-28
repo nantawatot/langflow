@@ -7,9 +7,9 @@ from typing import Any
 from langflow.custom import Component
 from langflow.inputs.inputs import (
     BoolInput,
-    CustomInput,
     DictInput,
     DropdownInput,
+    # CustomInput,
     IntInput,
     MessageTextInput,
     MultilineInput,
